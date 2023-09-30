@@ -18,7 +18,7 @@ export default async function handler(
     const { userName } = req.query;
 
     try {
-        const techStack = await TechStack.findOne({ userName });
+        const techStack = await TechStack.findOne({ userName: { $regex: new RegExp(userName, "i") }, });
 
         if (!techStack) {
             return res

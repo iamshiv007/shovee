@@ -14,7 +14,7 @@ export const LiveAlert = ({ liveAlert, userName, firstName }) => {
           "py-3 px-5 w-fit m-auto bg-green-600 flex items-center gap-8 rounded"
         }
       >
-        <div className='flex flex-col items-center gap-5'>
+        <div className='text-white flex flex-col items-center gap-5'>
           <AiOutlineCheckCircle size={100} />
           <div className='flex flex-col gap-5'>
             <p className='text-white font-semibold'>

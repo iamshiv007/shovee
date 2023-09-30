@@ -20,10 +20,13 @@ export const SavedProjectBox = ({
 
   // Edit Project
   const editProject = (i) => {
-    setFileInputValue("");
+    if (setFileInputValue) setFileInputValue("");
     setProjectArray(projectArray.filter((project, index) => index !== i));
     setProjectForm(projectArray[i]);
-    scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Use smooth scrolling animation
+    });
   };
 
   // Move Up

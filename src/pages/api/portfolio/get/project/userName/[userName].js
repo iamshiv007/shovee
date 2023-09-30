@@ -18,7 +18,7 @@ export default async function handler(
     const { userName } = req.query;
 
     try {
-        const project = await Project.findOne({ userName });
+        const project = await Project.findOne({ userName: { $regex: new RegExp(userName, "i") }, });
 
         if (!project) {
             return res

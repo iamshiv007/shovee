@@ -18,7 +18,7 @@ export default async function handler(
     const { userName } = req.query;
 
     try {
-        const experience = await Experience.findOne({ userName });
+        const experience = await Experience.findOne({ userName: { $regex: new RegExp(userName, "i") }, });
 
         if (!experience) {
             return res

@@ -133,8 +133,8 @@ const Home = () => {
               ref={profileRef}
               style={
                 home?.gender && home?.gender === "Female"
-                  ? { backgroundImage: "url(/images/profile6.png)" }
-                  : { backgroundImage: "url(/images/profile3.png)" }
+                  ? { backgroundImage: "url(/images/female.png)" }
+                  : { backgroundImage: "url(/images/male.png)" }
               }
             />
           </div>

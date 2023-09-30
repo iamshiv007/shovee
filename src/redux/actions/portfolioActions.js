@@ -163,12 +163,12 @@ export const authGetAbout = (userId) => async (dispatch) => {
 // 8. update about data
 export const updateAbout = (id, aboutForm) => async (dispatch) => {
     dispatch(updateAboutRequest());
-    const { image } = aboutForm
+    const { imageFile } = aboutForm
 
     try {
-        if (image) {
+        if (imageFile) {
             const formData = new FormData();
-            formData.append("file", image);
+            formData.append("file", imageFile);
             formData.append("upload_preset", process.env.NEXT_PUBLIC_UPLOAD_PRESET);
 
             const response = await fetch(

@@ -20,9 +20,13 @@ export const SavedEducationBox = ({
 
   //   Edit Education
   const editEducation = (i) => {
-    setFileInputValue("");
+    if (setFileInputValue) setFileInputValue("");
     setEducationArray(educationArray.filter((education, index) => index !== i));
     setEducationForm(educationArray[i]);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Use smooth scrolling animation
+    });
   };
 
   //   Move Up Education
@@ -119,4 +123,3 @@ export const SavedEducationBox = ({
     </div>
   );
 };
-

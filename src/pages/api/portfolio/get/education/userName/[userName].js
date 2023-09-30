@@ -18,7 +18,7 @@ export default async function handler(
     const { userName } = req.query;
 
     try {
-        const education = await Education.findOne({ userName });
+        const education = await Education.findOne({ userName: { $regex: new RegExp(userName, "i") }, });
 
         if (!education) {
             return res

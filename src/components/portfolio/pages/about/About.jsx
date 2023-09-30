@@ -69,7 +69,7 @@ const About = () => {
               src={
                 about?.image?.imageUrl
                   ? about.image.imageUrl
-                  : "/images/man3.png"
+                  : "/images/person.png"
               }
               width={350}
             />

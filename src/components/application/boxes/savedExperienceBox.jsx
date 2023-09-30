@@ -24,7 +24,10 @@ export const SavedExperienceBox = ({
       experienceArray.filter((experience, index) => index !== i)
     );
     setExperienceForm(experienceArray[i]);
-    scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Use smooth scrolling animation
+    });
   };
 
   // Move Up

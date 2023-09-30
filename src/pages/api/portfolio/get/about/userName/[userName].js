@@ -18,7 +18,7 @@ export default async function handler(
     const { userName } = req.query;
 
     try {
-        const about = await About.findOne({ userName });
+        const about = await About.findOne({ userName: { $regex: new RegExp(userName, "i") }, });
 
         if (!about) {
             return res
@@ -38,4 +38,4 @@ export default async function handler(
                 "Internal server error",
         });
     }
-} s
+} 

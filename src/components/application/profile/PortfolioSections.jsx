@@ -4,6 +4,7 @@ import { FiLink2 } from "react-icons/fi";
 import { AiFillHome } from "react-icons/ai";
 
 import SubmitLoader from "../layout/loader/SubmitLoader";
+import DeleteModal from "./DeleteModal";
 
 export const PortfolioSections = ({ allSections }) => {
   const [modal, setModal] = useState("");
@@ -47,34 +48,8 @@ export const PortfolioSections = ({ allSections }) => {
       {allSections.map((section) => (
         <div key={section.name}>
           {/* Delete Confirmation Modal */}
-          <div
-            className='h-screen w-screen m-auto bg-[#0000006e] flex justify-center items-center fixed top-0 left-0 transition-all z-10'
-            onClick={() => setModal("")}
-            style={modal === section.name ? {} : { display: "none" }}
-          >
-            <div className='w-[80%] md:w-[500px] bg-gray-300 dark:bg-gray-800 px-5 py-3 rounded'>
-              <p className='mb-4'>
-                Are You Sure You Want to Delete {section.name.toUpperCase()}
-              </p>
-              <div className='flex justify-between'>
-                <button
-                  className='text-white font-semibold px-3 py-1 bg-green-600 hover:bg-green-700 rounded'
-                  onClick={() => setModal("")}
-                >
-                  No
-                </button>
-                <button
-                  className='text-white font-semibold px-3 py-1 bg-red-600 hover:bg-red-700 rounded'
-                  onClick={() => {
-                    setModal("");
-                    section.fun();
-                  }}
-                >
-                  Yes
-                </button>
-              </div>
-            </div>
-          </div>
+          <DeleteModal modal={modal} section={section} setModal={setModal} />
+
           <div className='flex items-center gap-2'>
             <p>{section.icon}</p>
             <p> {section.name.toUpperCase()}</p>

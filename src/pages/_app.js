@@ -1,13 +1,13 @@
-import { Provider } from 'react-redux'
-import { Tooltip } from 'react-tooltip'
+import { Provider } from "react-redux"
+import { Tooltip } from "react-tooltip"
 import "react-tooltip/dist/react-tooltip.css"
 
-import store from '@/redux/store'
-import AuthProvider from '@/context/authContext'
-import ThemeProvider from '@/context/themeContext'
-import AlertProvider from '@/context/alertContext'
-import Alert from '@/components/application/layout/alert/Alert'
-import '@/styles/globals.css'
+import store from "@/redux/store"
+import AuthProvider from "@/context/authContext"
+import ThemeProvider from "@/context/themeContext"
+import AlertProvider from "@/context/alertContext"
+import Alert from "@/components/application/layout/alert/Alert"
+import "@/styles/globals.css"
 
 export default function App({ Component, pageProps }) {
   return (

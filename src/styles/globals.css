@@ -2,26 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* My Colors */
+/* Blue */
+/* #17c1ff */
+/* Green */
+/* #159e6e */
+
+/* Button Text Color */
+button {
+  color: white;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Browser autofill input background color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px rgb(17 24 39 / var(--tw-bg-opacity)) inset !important;
+  -webkit-text-fill-color: green;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Outline None */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* Scroll Smooth */
+* {
+  scroll-behavior: smooth !important;
+  -webkit-scroll-behavior: smooth !important; /* other browsers */
+}
+
+/* Home Animation and About Animation */
+.slide-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* SocialMedia animation */
+.social-hide > div {
+  transform: scale(0);
+}
+
+.social-show > div {
+  transform: scale(0.9);
+}
+
+/* TechStack, Experience, Education and Projects animation */
+.pop-down {
+  opacity: 0;
+  scale: 0;
+}
+
+.pop-up {
+  opacity: 1;
+  scale: 1;
+}
+
+.pop-down-child > div {
+  opacity: 0;
+  scale: 0;
+}
+
+.pop-up-child > div {
+  opacity: 1;
+  scale: 1;
 }
