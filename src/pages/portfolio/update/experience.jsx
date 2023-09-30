@@ -22,7 +22,7 @@ import {
   clearErrors as clearErrors2,
 } from "@/redux/reducers/experienceReducer";
 import { TextAreaElement } from "@/components/application/layout/input/TextAreaElement";
-import { SavedExperienceBox } from "@/components/application/boxes/SavedExperienceBox";
+import { SavedExperienceBox } from "@/components/application/boxes/savedExperienceBox";
 
 const Experience = () => {
   const [experienceArray, setExperienceArray] = useState([]);

@@ -23,7 +23,7 @@ import {
   resetEducation,
   clearErrors as clearErrors2,
 } from "@/redux/reducers/educationReducer";
-import { SavedEducationBox } from "@/components/application/boxes/SavedEducationBox";
+import { SavedEducationBox } from "@/components/application/boxes/savedEducationBox";
 
 // Main Page component
 const Education = () => {

@@ -24,7 +24,7 @@ import {
   resetProject,
   clearErrors as clearErrors2,
 } from "@/redux/reducers/projectReducer";
-import { SavedProjectBox } from "@/components/application/boxes/SavedProjectBox";
+import { SavedProjectBox } from "@/components/application/boxes/savedProjectBox";
 
 // Main Page component
 const Project = () => {

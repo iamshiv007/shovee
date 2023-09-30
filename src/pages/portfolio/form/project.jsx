@@ -11,7 +11,7 @@ import Navbar from "@/components/application/layout/navbar/Navbar";
 import SubmitLoader from "@/components/application/layout/loader/SubmitLoader";
 import Loader from "@/components/application/layout/loader/Loader";
 import { InputElement } from "@/components/application/layout/input/InputElement";
-import { SavedProjectBox } from "@/components/application/boxes/SavedProjectBox";
+import { SavedProjectBox } from "@/components/application/boxes/savedProjectBox";
 import { useAlert } from "@/context/alertContext";
 import { useAuthContext } from "@/context/authContext";
 import { authGetHome, createProject } from "@/redux/actions/portfolioActions";

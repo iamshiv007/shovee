@@ -11,7 +11,7 @@ import SubmitLoader from "@/components/application/layout/loader/SubmitLoader";
 import Loader from "@/components/application/layout/loader/Loader";
 import { InputElement } from "@/components/application/layout/input/InputElement";
 import { TextAreaElement } from "@/components/application/layout/input/TextAreaElement";
-import { SavedExperienceBox } from "@/components/application/boxes/SavedExperienceBox";
+import { SavedExperienceBox } from "@/components/application/boxes/savedExperienceBox";
 import { useAlert } from "@/context/alertContext";
 import { useAuthContext } from "@/context/authContext";
 import {
