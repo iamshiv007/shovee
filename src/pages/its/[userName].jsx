@@ -5,13 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 
 import Home from "@/components/portfolio/pages/home/Home";
 import Navbar from "@/components/portfolio/layout/navbar/Navbar";
-import SocialMedia from "@/components/portfolio/others/socialMedia/socialMedia";
+import SocialMedia from "@/components/portfolio/others/socialMedia/SocialMedia";
 import About from "@/components/portfolio/pages/about/About";
 import TechStack from "@/components/portfolio/pages/techStack/TechStack";
 import Education from "@/components/portfolio/pages/education/Education";
 import Experience from "@/components/portfolio/pages/experience/Experience";
 import Project from "@/components/portfolio/pages/project/Project";
-import GetInTouch from "@/components/portfolio/others/getIntouch/GetInTouch";
+import GetInTouch from "@/components/portfolio/others/getInTouch/GetInTouch";
 import Footer from "@/components/portfolio/layout/footer/Footer";
 import { useAlert } from "@/context/alertContext";
 import {
