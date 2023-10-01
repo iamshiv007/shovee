@@ -30,7 +30,9 @@ import {
     SiPytorch,
     SiCircleci,
     SiSocketdotio,
-    SiWebrtc
+    SiWebrtc,
+    SiAndroidstudio,
+    SiSqlite
 } from "react-icons/si";
 import { DiJavascript1, DiReact, DiMongodb, DiSass, DiRuby } from "react-icons/di";
 import { BsAndroid2, BsGit, BsGithub, BsWordpress } from "react-icons/bs";
@@ -38,7 +40,7 @@ import { FaBootstrap, FaCss3Alt, FaAngular, FaPhp, FaShopify, FaJava, FaAws, FaU
 import { TbBrandReactNative, TbBrandKotlin, TbBrandFramerMotion, TbCurrencySolana } from "react-icons/tb";
 import { GrMysql, GrSwift, GrDocker, GrHeroku } from "react-icons/gr";
 import { LiaVuejs } from "react-icons/lia";
-import { FaGolang } from "react-icons/fa6";
+import { FaDigitalOcean, FaGolang } from "react-icons/fa6";
 import { LuBrainCircuit } from "react-icons/lu";
 import { VscAzure } from "react-icons/vsc";
 import { BiLogoPostgresql, BiLogoFlask, BiLogoCPlusPlus } from "react-icons/bi";
@@ -270,8 +272,16 @@ export const TechStackOptions = [
         icon: <SiClojure className="md:text-4xl text-2xl" color="#94dd4d" />
     },
     {
-        name: "Android",
-        icon: <BsAndroid2 className="md:text-4xl text-2xl" color="#a9d03f" />
+        name: "Android Studio",
+        icon: <SiAndroidstudio className="md:text-4xl text-2xl" color="#4889f4" />
+    },
+    {
+        name: "SQLite",
+        icon: <SiSqlite className="md:text-4xl text-2xl" color="#65b7e7" />
+    },
+    {
+        name: "DigitalOcean",
+        icon: <FaDigitalOcean className="md:text-4xl text-2xl" color="#0884ff" />
     },
     {
         name: "Wordpress",
