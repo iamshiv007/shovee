@@ -1,6 +1,7 @@
 import { Provider } from "react-redux"
 import { Tooltip } from "react-tooltip"
 import "react-tooltip/dist/react-tooltip.css"
+import { Analytics } from "@vercel/analytics/react"
 
 import store from "@/redux/store"
 import AuthProvider from "@/context/authContext"
@@ -23,6 +24,8 @@ export default function App({ Component, pageProps }) {
               delayShow={200}
               id='my-tooltip' style={{ backgroundColor: "#0000ffcc", color: "white", padding: "3px 6px" }}
             />
+            {/* Analytics */}
+            <Analytics />
             <Component {...pageProps} />
           </AlertProvider>
         </ThemeProvider>
