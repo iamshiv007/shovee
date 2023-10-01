@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 
-const mailSchema = new mongoose.Schema({
+const feedbackSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -9,8 +9,8 @@ const mailSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    subject: {
-        type: String,
+    rating: {
+        type: Number,
         required: true
     },
     message: {
@@ -21,4 +21,4 @@ const mailSchema = new mongoose.Schema({
 
 mongoose.models = {};
 
-export const Mail = mongoose.model("mail", mailSchema)
+export const Feedback = mongoose.model("feedback", feedbackSchema)

@@ -14,6 +14,7 @@ import experienceDataReducer from "./reducers/experienceDataReducer";
 import projectReducer from "./reducers/projectReducer";
 import projectDataReducer from "./reducers/projectDataReducer";
 import mailReducer from "./reducers/mailReducer";
+import feedbackReducer from "./reducers/feedbackReducer";
 
 const rootReducer = combineReducers({
     home: homeReducer,
@@ -29,7 +30,8 @@ const rootReducer = combineReducers({
     experienceData: experienceDataReducer,
     project: projectReducer,
     projectData: projectDataReducer,
-    mail: mailReducer
+    mail: mailReducer,
+    feedback: feedbackReducer
 })
 
 export default rootReducer

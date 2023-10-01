@@ -3,7 +3,7 @@ import axios from "axios";
 import { newMailFailed, newMailRequest, newMailSuccess } from "../reducers/mailReducer";
 
 // 1. New Mail
-export const newMail = (formData) => async (dispatch) => {
+export const createMail = (formData) => async (dispatch) => {
     dispatch(newMailRequest());
 
     try {

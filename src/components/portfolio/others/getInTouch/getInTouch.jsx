@@ -9,7 +9,7 @@ import TextAreaElement from "../../layout/input/TextAreaElement";
 
 import { useAlert } from "@/context/alertContext";
 import { clearErrors, resetMail } from "@/redux/reducers/mailReducer";
-import { newMail } from "@/redux/actions/mailActions";
+import { createMail } from "@/redux/actions/mailActions";
 import SubmitLoader from "@/components/application/layout/loader/SubmitLoader";
 
 const GetInTouch = () => {
@@ -45,7 +45,7 @@ const GetInTouch = () => {
     const { name, email, subject, message } = mailForm;
 
     dispatch(
-      newMail({ name, email, subject, message, receiverEmail: home.email })
+      createMail({ name, email, subject, message, receiverEmail: home.email })
     );
   };
 
