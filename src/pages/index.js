@@ -10,7 +10,7 @@ import Loader from "@/components/application/layout/loader/Loader"
 import { useAlert } from "@/context/alertContext"
 import { useAuthContext } from "@/context/authContext"
 import { authGetHome } from "@/redux/actions/portfolioActions"
-import { clearErrors } from "@/redux/reducers/homeReducer"
+import { clearErrors } from "@/redux/reducers/homeDataReducer"
 
 const inter = Inter({ subsets: ["latin"] })
 

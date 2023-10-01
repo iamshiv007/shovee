@@ -57,7 +57,7 @@ const Page = () => {
 
     setLoading(false);
     // Else successful
-    showAlert("Account created successfull !", "success");
+    showAlert("Account created successfully !", "success");
     router.push("/");
 
     // Data Store To Database
