@@ -189,6 +189,7 @@ const Home = () => {
                     name='firstName'
                     onChange={handleInputChange}
                     placeholder='Write Your First Name'
+                    required
                     type='text'
                   />
                 </div>
