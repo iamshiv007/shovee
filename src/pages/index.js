@@ -58,9 +58,9 @@ export default function Home() {
     <Fragment>
       <Head>
         <title>Shovee</title>
-        <meta content="Portfolio Generator" name="title" />
-        <meta content="This is an application layout where anybody can create their personal portfolio websiteś by freely filling out details." name="description" />
-        <meta content="portfolio generator, free portfolio generator" name="keywords" />
+        <meta content="Shovee - Personal Portfolio Generator" name="title" />
+        <meta content="This is an application where anybody can create their personal portfolio website by easily filling out details." name="description" />
+        <meta content="portfolio generator, free portfolio generator, best personal portfolio, Next.js personal portfolio" name="keywords" />
         <meta content="Shivraj Gurjar" name="author" />
 
       </Head>
