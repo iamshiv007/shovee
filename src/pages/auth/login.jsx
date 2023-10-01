@@ -48,7 +48,7 @@ const Page = () => {
 
     // Else successful
     showAlert("Logged in successfully !", "success");
-    return router.push(redirect ? redirect : "/");
+    router.push(redirect ? redirect : "/");
   };
 
   // Login With google
@@ -58,6 +58,8 @@ const Page = () => {
     if (error) {
       return showAlert(error?.message || error?.customData?.email, "error");
     } else {
+      showAlert("Request successfull !", "success");
+      router.push(redirect ? redirect : "/");
       try {
         const { data } = await axios.post("/api/auth/signup", {
           uid: result.user.uid,
@@ -68,8 +70,6 @@ const Page = () => {
       } catch (error) {
         console.log(error);
       }
-      showAlert("Logged in successfully !", "success");
-      return router.push(redirect ? redirect : "/");
     }
   };
 
@@ -80,6 +80,8 @@ const Page = () => {
     if (error) {
       return showAlert(error?.message || error?.customData?.email, "error");
     } else {
+      showAlert("Request successfull !", "success");
+      router.push(redirect ? redirect : "/");
       try {
         const { data } = await axios.post("/api/auth/signup", {
           uid: result.user.uid,
@@ -90,8 +92,6 @@ const Page = () => {
       } catch (error) {
         console.log(error);
       }
-      showAlert("Logged in successfully !", "success");
-      return router.push(redirect ? redirect : "/");
     }
   };
 

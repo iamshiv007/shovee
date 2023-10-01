@@ -10,6 +10,7 @@ import Loader from "@/components/application/layout/loader/Loader"
 import { useAlert } from "@/context/alertContext"
 import { useAuthContext } from "@/context/authContext"
 import { authGetHome } from "@/redux/actions/portfolioActions"
+import { clearErrors } from "@/redux/reducers/homeReducer"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -18,7 +19,7 @@ export default function Home() {
   const { user } = useAuthContext()
   const dispatch = useDispatch()
 
-  const { home, loading } = useSelector(state => state.homeData)
+  const { home, loading, error } = useSelector(state => state.homeData)
 
   // Data Connection
   useEffect(() => {
@@ -46,12 +47,19 @@ export default function Home() {
       dispatch(authGetHome(user?.uid))
     }
   }, [user, dispatch]);
+
+  useEffect(() => {
+    if (error) {
+      dispatch(clearErrors())
+    }
+  }, [error, dispatch]);
+
   return (
     <Fragment>
       <Head>
         <title>Shovee</title>
         <meta content="Portfolio Generator" name="title" />
-        <meta content="This is an application/layout where anybody can create their personal portfolio websiteś by freely filling out details." name="description" />
+        <meta content="This is an application layout where anybody can create their personal portfolio websiteś by freely filling out details." name="description" />
         <meta content="portfolio generator, free portfolio generator" name="keywords" />
         <meta content="Shivraj Gurjar" name="author" />
 
@@ -63,17 +71,7 @@ export default function Home() {
 
         {/* Text  */}
         {loading ? <Loader /> : <div className='min-h-screen flex flex-col justify-center items-center gap-5'>
-          {!home?.userName ?
-            <><p className='p-2 text-4xl text-center font-semibold'>
-              Let&apos;s Build a Stunning Personal Portfolio !
-            </p>
-              {/* Start button */}
-              <Link
-                className='text-white py-1 px-3 font-semibold bg-blue-600 hover:bg-blue-700 rounded'
-                href='/portfolio/form/home'
-              >
-                Start
-              </Link></> :
+          {user?.email && home?.userName ?
             <>
               <p className='p-2 text-4xl text-center font-semibold'>
                 Update Your Personal Portfolio.
@@ -84,7 +82,22 @@ export default function Home() {
                 href='/auth/profile'
               >
                 Profile
-              </Link></>}
+              </Link>
+            </>
+            :
+            <>
+              <p className='p-2 text-4xl text-center font-semibold'>
+                Let&apos;s Build a Stunning Personal Portfolio !
+              </p>
+              {/* Start button */}
+              <Link
+                className='text-white py-1 px-3 font-semibold bg-blue-600 hover:bg-blue-700 rounded'
+                href='/portfolio/form/home'
+              >
+                Start
+              </Link>
+            </>
+          }
         </div>}
       </div>
 

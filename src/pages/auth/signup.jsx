@@ -55,6 +55,11 @@ const Page = () => {
       return showAlert(error.message, "error");
     }
 
+    setLoading(false);
+    // Else successful
+    showAlert("Account created successfull !", "success");
+    router.push("/");
+
     // Data Store To Database
     try {
       const { data } = await axios.post("/api/auth/signup", {
@@ -67,11 +72,6 @@ const Page = () => {
     } catch (error) {
       console.log(error);
     }
-
-    setLoading(false);
-    // Else successful
-    showAlert("Account created successfully !", "success");
-    return router.push("/");
   };
 
   // Handle Password
@@ -91,6 +91,8 @@ const Page = () => {
     if (error) {
       return showAlert(error?.message || error?.customData?.email, "error");
     } else {
+      showAlert("Request successfull !", "success");
+      router.push("/");
       // Data Store To Database
       try {
         const { data } = await axios.post("/api/auth/signup", {
@@ -101,8 +103,6 @@ const Page = () => {
       } catch (error) {
         console.log(error);
       }
-      showAlert("Account created successfully !", "success");
-      return router.push("/");
     }
   };
 
@@ -113,6 +113,8 @@ const Page = () => {
     if (error) {
       return showAlert(error?.message || error?.customData?.email, "error");
     } else {
+      showAlert("Request successfully !", "success");
+      router.push("/");
       try {
         const { data } = await axios.post("/api/auth/signup", {
           uid: result.user.uid,
@@ -123,8 +125,6 @@ const Page = () => {
       } catch (error) {
         console.log(error);
       }
-      showAlert("Account created successfully !", "success");
-      return router.push("/");
     }
   };
 
