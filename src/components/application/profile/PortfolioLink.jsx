@@ -28,7 +28,7 @@ export const PortfolioLink = ({ home }) => {
         </p>
         <Link
           className='text-lg w-[200px] md:w-auto py-1 text-blue-600 hover:underline overflow-scroll md:overflow-auto'
-          href={`${process.env.NEXT_PUBLIC_APPLICATION_URL}/its/${home?.userName}`}
+          href={`/its/${home?.userName}`}
         >
           {process.env.NEXT_PUBLIC_APPLICATION_URL}/its/
           {home?.userName}
