@@ -67,18 +67,16 @@ const Education = () => {
                 key={education.degree}
               >
                 {/* Institution Image */}
-                <div>
-                  <Image
-                    alt={education.degree}
-                    className='hidden md:block'
-                    height={150}
-                    src={
-                      education?.institutionImage?.imageUrl ||
-                      "/images/noImage.png"
-                    }
-                    width={150}
-                  />
-                </div>
+                <Image
+                  alt={education.degree}
+                  className='hidden md:block'
+                  height={150}
+                  src={
+                    education?.institutionImage?.imageUrl ||
+                    "/images/noImage.png"
+                  }
+                  width={150}
+                />
                 <div className='flex flex-col gap-2 p-3 md:p-1'>
                   {/* Degree Name */}
                   <p className='text-xl md:text-2xl font-bold text-red-600'>

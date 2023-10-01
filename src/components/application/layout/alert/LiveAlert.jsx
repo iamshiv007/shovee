@@ -6,7 +6,7 @@ import { AiOutlineCheckCircle } from "react-icons/ai";
 export const LiveAlert = ({ liveAlert, userName, firstName }) => {
   return (
     <div
-      className='w-full fixed top-5 z-20 left-2 right-2 md:left-auto md:right-auto'
+      className='w-full fixed top-5 z-20'
       style={liveAlert ? { display: "block" } : { display: "none" }}
     >
       <div
