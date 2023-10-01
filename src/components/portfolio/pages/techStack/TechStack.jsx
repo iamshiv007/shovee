@@ -95,7 +95,7 @@ const TechStack = () => {
             {/* Section Buttons Group */}
             {sections.map((sectionName) => (
               <button
-                className={`text-black dark:text-white w-[120px] md:w-[150px] p-2 font-bold hover:bg-gray-200 dark:hover:bg-gray-700 ${
+                className={`text-sm md:text-base text-black dark:text-white w-[100px] md:w-[150px] p-2 font-bold hover:bg-gray-200 dark:hover:bg-gray-700 ${
                   section === sectionName ? "bg-red-600" : null
                 } transition-all`}
                 key={sectionName}
@@ -117,13 +117,15 @@ const TechStack = () => {
             {sectionData.length !== 0 ? (
               sectionData.map((tech) => (
                 <div
-                  className='transition-all duration-700 px-2 h-fit py-3 md:py-5 w-[120px] md:w-[150px] border border-black dark:border-white border-solid rounded flex flex-col gap-3 items-center'
+                  className='transition-all duration-700 px-2 h-fit py-3 md:py-5 w-[80px] md:w-[150px] border border-black dark:border-white border-solid rounded flex flex-col gap-3 items-center'
                   key={tech.name}
                 >
                   {/* Tech Icon */}
                   <p>{tech.icon}</p>
                   {/* Tech Name */}
-                  <p>{tech.name}</p>
+                  <p className='text-sm md:text-base text-center'>
+                    {tech.name}
+                  </p>
                 </div>
               ))
             ) : (

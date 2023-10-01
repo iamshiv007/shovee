@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <Fragment>
       {home?.email && (
-        <div className='px-[20px] py-3 flex justify-between items-center'>
+        <div className='px-[20px] py-3 flex flex-col md:flex-row justify-between items-center gap-3'>
           <div className='md:w-[25%]'>
             {/* Like button */}{" "}
             <button

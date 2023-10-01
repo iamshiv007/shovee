@@ -86,7 +86,7 @@ const About = () => {
                 {home?.profileName}
               </p>
               {/* Location */}
-              <div className='flex flex-wrap gap-5'>
+              <div className='flex flex-wrap justify-center md:justify-normal gap-5'>
                 {about?.location && (
                   <div className='w-fit px-4 py-2 mt-5 border border-gray-400 rounded flex flex-col items-center gap-2'>
                     <div className='flex gap-3 items-center'>
@@ -97,7 +97,7 @@ const About = () => {
                         <ImLocation />
                       </p>
                     </div>
-                    <p className='text-center md:text-left text-[#159e6e] dark:text-[#17c1ff]'>
+                    <p className='text-center md:text-left text-[#0b0c0c] dark:text-[#17c1ff]'>
                       {about?.location}
                     </p>
                   </div>

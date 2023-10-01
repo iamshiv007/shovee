@@ -13,6 +13,7 @@ const NavbarMobile = ({
   showMenu,
   user,
   home,
+  top,
 }) => {
   return (
     //  Mobile Header

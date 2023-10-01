@@ -2,6 +2,7 @@
 import React, { Fragment, useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
+import { BsFillSendCheckFill } from "react-icons/bs";
 
 import InputElement from "../../layout/input/InputElement";
 import TextAreaElement from "../../layout/input/TextAreaElement";
@@ -95,7 +96,7 @@ const GetInTouch = () => {
       {!loading && home?.email && (
         <div id={"getInTouch"} ref={gitRef}>
           <h2 className='text-3xl text-center font-bold pt-4 pb-8 flex justify-center items-center gap-3'>
-            Get In Touch
+            <BsFillSendCheckFill /> Get In Touch
           </h2>
 
           <div className='pb-[30px] px-[20px] lg:px-[200px] flex justify-center lg:justify-between items-center gap-4 shadow-sm shadow-zinc-300 dark:shadow-zinc-700 overflow-x-hidden'>

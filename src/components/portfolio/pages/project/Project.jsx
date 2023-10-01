@@ -52,7 +52,7 @@ const Project = () => {
           </h2>
 
           <div
-            className='min-h-[400px] pop-down-child pb-[30px] flex flex-wrap px-[20px] gap-4 justify-around items-center shadow-sm shadow-zinc-300 dark:shadow-zinc-700'
+            className='min-h-[400px] pop-down-child pb-[30px] flex flex-wrap px-[20px] gap-8 justify-around items-center shadow-sm shadow-zinc-300 dark:shadow-zinc-700'
             ref={projectBoxesRef}
           >
             {projects.map((project) => (
@@ -119,7 +119,7 @@ const Project = () => {
                   </div>
                 </div>
                 {/* Tech Stack */}
-                <div className='flex flex-wrap gap-1 mt-1'>
+                <div className='flex flex-wrap gap-2 mt-4'>
                   {project.techs.map((tech) => (
                     <p
                       className='px-1 text-sm rounded bg-blue-500 text-white'
