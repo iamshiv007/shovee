@@ -11,6 +11,7 @@ import { useAlert } from "@/context/alertContext"
 import { useAuthContext } from "@/context/authContext"
 import { authGetHome } from "@/redux/actions/portfolioActions"
 import { clearErrors } from "@/redux/reducers/homeDataReducer"
+import ChatBox from "@/components/application/tawto/chatbox"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -68,6 +69,8 @@ export default function Home() {
       <div className='min-h-screen'>
         {/* Navbar */}
         <Navbar />
+        {/* ChatBox */}
+        <ChatBox />
 
         {/* Text  */}
         {loading ? <Loader /> : <div className='min-h-screen flex flex-col justify-center items-center gap-5'>
