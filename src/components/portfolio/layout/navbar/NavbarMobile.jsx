@@ -46,18 +46,16 @@ const NavbarMobile = ({
           {theme === "dark" ? <TbBulbFilled /> : <BsFillLightningChargeFill />}
         </button>
         {/* Profile Icon */}
-        {user?.email ? (
-          <div
-            className='p-1 border border-gray-500 rounded-full'
-            data-tooltip-content='Profile'
-            data-tooltip-id='my-tooltip'
-            data-tooltip-place='left'
-          >
-            <Link href='/auth/profile'>
-              <AiOutlineUser size={20} />
-            </Link>
-          </div>
-        ) : null}
+        <div
+          className='p-1 border border-gray-500 rounded-full'
+          data-tooltip-content={user?.email ? "Profile" : "Login"}
+          data-tooltip-id='my-tooltip'
+          data-tooltip-place='left'
+        >
+          <Link href={user?.email ? "/auth/profile" : "/auth/login"}>
+            <AiOutlineUser size={20} />
+          </Link>
+        </div>
       </div>
     </div>
   );
