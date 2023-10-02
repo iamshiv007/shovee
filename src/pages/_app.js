@@ -2,6 +2,7 @@ import { Provider } from "react-redux"
 import { Tooltip } from "react-tooltip"
 import "react-tooltip/dist/react-tooltip.css"
 import { Analytics } from "@vercel/analytics/react"
+import ReactGA from "react-ga4";
 
 import store from "@/redux/store"
 import AuthProvider from "@/context/authContext"
@@ -9,6 +10,8 @@ import ThemeProvider from "@/context/themeContext"
 import AlertProvider from "@/context/alertContext"
 import Alert from "@/components/application/layout/alert/Alert"
 import "@/styles/globals.css"
+
+ReactGA.initialize(process.env.NEXT_PUBLIC_MEASUREMENT_ID);
 
 export default function App({ Component, pageProps }) {
   return (
