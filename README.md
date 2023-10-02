@@ -5,7 +5,7 @@
 </div>
 </div>
 
-# [shovee.com](https://shovee.com) - Personal Portfolio Generator
+# [shovee.com](https://shovee.com){target="_blank"} - Personal Portfolio Generator
 
 ## 1. Features ✅
 
@@ -17,14 +17,15 @@
   
 ## 2. Sections 🧱
 
-1. [Home](https://shovee.com/its/shiv#home)
-2. [About](https://shovee.com/its/shiv#about)
-3. [TechStack](https://shovee.com/its/shiv#techStack)
-4. [Education](https://shovee.com/its/shiv#education)
-5. [Experience](https://shovee.com/its/shiv#experience)
-6. [Project](https://shovee.com/its/shiv#projects)
+1. [Home](https://shovee.com/its/shiv#home){target="_blank"}
+2. [About](https://shovee.com/its/shiv#about){target="_blank"}
+3. [TechStack](https://shovee.com/its/shiv#techStack){target="_blank"}
+4. [Education](https://shovee.com/its/shiv#education){target="_blank"}
+5. [Experience](https://shovee.com/its/shiv#experience){target="_blank"}
+6. [Project](https://shovee.com/its/shiv#projects){target="_blank"}
 
-# [Live](https://shovee.com/its/shiv) - Demo Final Result
+
+# [Live](https://shovee.com/its/shiv){target="_blank"} - Demo Final Result
 
 ### Home
 <img src="https://res.cloudinary.com/dhcc4rnbc/image/upload/v1696228182/Screenshot_2023-10-01_195341_om5qwv.png" alt="Welcome Screen" style="width: 440px; height: auto;">
@@ -47,14 +48,14 @@
 
 ## 3. Tech Stack 💻
 
-- [Next JS](https://nextjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
+- [Next JS](https://nextjs.org/){target="_blank"}
+- [Tailwind CSS](https://tailwindcss.com/){target="_blank"}
 - Libraries:
 
-  - [react-icons](https://react-icons.github.io/react-icons/search)
-  - [axios](https://axios-http.com/docs/intro)
-  - [mongoose](https://mongoosejs.com/)
-  - [nodemailer](https://nodemailer.com/about)
+  - [react-icons](https://react-icons.github.io/react-icons/search){target="_blank"}
+  - [axios](https://axios-http.com/docs/intro){target="_blank"}
+  - [mongoose](https://mongoosejs.com/){target="_blank"}
+  - [nodemailer](https://nodemailer.com/about){target="_blank"}
 
 
 ## 4. Contribute 🎁
