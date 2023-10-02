@@ -38,12 +38,12 @@
 
 ## 2. Sections 🧱
 
-- <a href="https://shovee.com/its/shiv#home" target="_blank">Home</a>
-- <a href="https://shovee.com/its/shiv#about" target="_blank">About</a>
-- <a href="https://shovee.com/its/shiv#techStack" target="_blank">TechStack</a>
-- <a href="https://shovee.com/its/shiv#education" target="_blank">Education</a>
-- <a href="https://shovee.com/its/shiv#experience" target="_blank">Experience</a>
-- <a href="https://shovee.com/its/shiv#projects" target="_blank">Project</a>
+- Home
+- About
+- TechStack
+- Education
+- Experience
+- Project
 
 ## 3. Tech Stack 💻
 
@@ -72,7 +72,7 @@
 ## 5. Contribute 🎁
 **Just share your Shovee portfolio, and you will become a member of its next version if you are a skilled developer.**
 
-[Share here](https://shovee.com/its/shiv#getInTouch)
+<a href="mailto:softdev.shivraj@gmail.com">Share here</a>
 
 ## Key Points
 
