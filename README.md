@@ -1,38 +1,85 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <div style="display: flex;">
+    <img src="https://res.cloudinary.com/dhcc4rnbc/image/upload/v1696225956/logo_etsxfz.png" alt="Welcome Screen" style="width: 44px; height: 44px;">
+    <p>SHOVEE</p>
+  </div>
+</div>
 
-## Getting Started
+<h1><a href="https://shovee.com" target="_blank">shovee.com</a> - Personal Portfolio Generator</h1>
+<p>🚀 Welcome to our platform! Here, you can easily create a dazzling personal portfolio by just adding your info. 📝 Our design is developer-friendly, perfect for both frontend and full-stack devs. Even AI and backend developers 🤖 who aren't frontend pros can shine! 💡 Whether you're flaunting your coding skills 💻 or showcasing your work, our platform is your canvas to craft an impressive portfolio that reflects your talents and achievements. </p>
 
-First, run the development server:
+# [Live Demo](https://shovee.com/its/shiv)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Home
+<img src="https://res.cloudinary.com/dhcc4rnbc/image/upload/v1696228182/Screenshot_2023-10-01_195341_om5qwv.png" alt="Welcome Screen" style="width: 440px; height: auto;">
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### About
+<img src="https://res.cloudinary.com/dhcc4rnbc/image/upload/v1696228414/Screenshot_2023-10-01_195508_tlm1cu.png" alt="Welcome Screen" style="width: 440px; height: auto;">
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### TechStack
+<img src="https://res.cloudinary.com/dhcc4rnbc/image/upload/v1696230285/Screenshot_2023-10-02_123421_jyefiv.png" alt="Welcome Screen" style="width: 440px; height: auto;">
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### EDUCATION
+<img src="https://res.cloudinary.com/dhcc4rnbc/image/upload/v1696228108/Screenshot_2023-10-02_115712_wshua2.png" alt="Welcome Screen" style="width: 440px; height: auto;">
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Experience
+<img src="https://res.cloudinary.com/dhcc4rnbc/image/upload/v1696230476/Screenshot_2023-10-02_123733_ogclg9.png" alt="Welcome Screen" style="width: 440px; height: auto;">
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Project
+<img src="https://res.cloudinary.com/dhcc4rnbc/image/upload/v1696228108/Screenshot_2023-10-02_115651_lnbwfe.png" alt="Welcome Screen" style="width: 440px; height: auto;">
 
-## Learn More
+## 1. Features ✅
 
-To learn more about Next.js, take a look at the following resources:
+- Simple and Clean Design
+- Animation
+- Dark and Light Theme
+- Mobile Responsiveness
+- Message by Gmail
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 2. Sections 🧱
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Home
+- About
+- TechStack
+- Education
+- Experience
+- Project
 
-## Deploy on Vercel
+## 3. Tech Stack 💻
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- <a href="https://nextjs.org/" target="_blank">Next JS</a>
+- <a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a>
+- Libraries:
+  - <a href="https://react-icons.github.io/react-icons/search" target="_blank">react-icons</a>
+  - <a href="https://axios-http.com/docs/intro" target="_blank">axios</a>
+  - <a href="https://mongoosejs.com/" target="_blank">mongoose</a>
+  - <a href="https://nodemailer.com/about" target="_blank">nodemailer</a>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## 4. Upcoming Features
+**We're building the biggest social network 🚀 for developers.**
+
+- 🎨  Personal Portfolio Design: Diverse portfolio templates for showcasing your work uniquely.
+- 🤝  Connect with Developers: Network and collaborate.
+- 💼  Job Provider Chat: Engage with job providers.
+- 💡  Problem Sharing: Developers can share coding challenges.
+- ✅More option(design) for creating Personal Portfolio.
+- 🚀  Quick Answers: Get rapid help from peers.
+- ✍️  Blogging: Create and publish insightful blogs.
+- 📆  Daily Updates: Share daily progress and achievements.
+- 🧠  Knowledge Posts: Share tutorials and tips for skill growth.
+
+## 5. Contribute 🎁
+**Just share your Shovee portfolio, and you will become a member of its next version if you are a skilled developer.**
+
+<a href="mailto:softdev.shivraj@gmail.com">Share here</a>
+
+### Key Points
+
+- Unpaid, but an excellent opportunity to build your portfolio.
+- Proficient in web design and CSS styling.
+- Strong expertise in ReactJS or NextJS.
+- Strong grasp of JavaScript for logic development.
+- Punctuality and dedication are a must.
+
+Happy coding! 🚀
