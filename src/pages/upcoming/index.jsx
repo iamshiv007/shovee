@@ -24,7 +24,7 @@ const Upcoming = () => {
             <li>
               💡&nbsp; Problem Sharing: Developers can share coding challenges.
             </li>
-            <li>More option(design) for creating Personal Portfolio.</li>
+            <li>✅ More option(design) for creating Personal Portfolio.</li>
             <li>🚀&nbsp; Quick Answers: Get rapid help from peers.</li>
             <li>✍️&nbsp; Blogging: Create and publish insightful blogs.</li>
             <li>

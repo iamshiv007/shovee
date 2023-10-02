@@ -30,12 +30,12 @@ const Partner = () => {
           <p className='text-xl font-semibold'>Key Points</p>
           <ul className='list-inside list-disc'>
             <li>
-              You don&apos;t get paid, but you have a great project to showcase.
+              Unpaid, but an excellent opportunity to build your portfolio.
             </li>
-            <li>You have practiced a lot of web design and CSS styling.</li>
-            <li>You have a strong command of ReactJS or NextJS.</li>
-            <li>You have a strong command of JavaScript logic building.</li>
-            <li>You are a punctual and sincere developer.</li>
+            <li>Proficient in web design and CSS styling.</li>
+            <li>Strong expertise in ReactJS or NextJS.</li>
+            <li>Strong grasp of JavaScript for logic development.</li>
+            <li>Punctuality and dedication are a must.</li>
           </ul>
         </div>
       </div>
