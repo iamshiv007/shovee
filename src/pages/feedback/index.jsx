@@ -49,7 +49,7 @@ const Home = () => {
       dispatch(clearErrors());
     }
     if (feedbackCreated) {
-      showAlert("Mail sent successfull", "success");
+      showAlert("Mail sent successfully", "success");
       dispatch(clearErrors());
       setFeedbackFormData({
         name: "",
@@ -100,7 +100,7 @@ const Home = () => {
                 type='email'
                 value={feedbackFormData.email || ""}
               />
-              {/* Email */}
+              {/* Rating */}
               <InputElement
                 handleInputChange={handleInputChange}
                 id='rating'
@@ -111,6 +111,7 @@ const Home = () => {
                 type='number'
                 value={feedbackFormData.rating || ""}
               />
+              {/* Message */}
               <InputElement
                 handleInputChange={handleInputChange}
                 id='message'

@@ -55,20 +55,26 @@ const About = () => {
       const file = e.target.files[0];
       const reader = new FileReader();
 
-      const options = {
-        maxSizeMB: 1,
-        maxWidthOrHeight: 1920,
-        useWebWorker: true,
-      };
-      const compressedFile = await imageCompression(file, options);
+      if (file) {
+        const options = {
+          maxSizeMB: 1,
+          maxWidthOrHeight: 1920,
+          useWebWorker: true,
+        };
+        const compressedFile = await imageCompression(file, options);
 
-      reader.onload = (event) => {
-        const imageUrl = event.target.result;
-        setImagePreview(imageUrl);
-      };
-      reader.readAsDataURL(compressedFile);
-      setImageFile(compressedFile);
-      return;
+        reader.onload = (event) => {
+          const imageUrl = event.target.result;
+          setImagePreview(imageUrl);
+        };
+        reader.readAsDataURL(compressedFile);
+        setImageFile(compressedFile);
+        return;
+      } else {
+        setImagePreview(""); // Clear the preview
+        setImageFile(""); // Clear the image file
+        return;
+      }
     }
     setAboutFormData({ ...aboutFormData, [e.target.name]: e.target.value });
   };
