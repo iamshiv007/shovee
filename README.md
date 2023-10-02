@@ -74,7 +74,7 @@
 
 <a href="mailto:softdev.shivraj@gmail.com">Share here</a>
 
-## Key Points
+### Key Points
 
 - Unpaid, but an excellent opportunity to build your portfolio.
 - Proficient in web design and CSS styling.
