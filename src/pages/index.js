@@ -57,15 +57,6 @@ export default function Home() {
 
   return (
     <Fragment>
-      <Head>
-        <title>Shovee</title>
-        <meta content="Shovee - Personal Portfolio Generator" name="title" />
-        <meta content="This is an application where anybody can create their personal portfolio website by easily filling out details." name="description" />
-        <meta content="portfolio generator, free portfolio generator, best personal portfolio, Next.js personal portfolio" name="keywords" />
-        <meta content="Shivraj Gurjar" name="author" />
-
-      </Head>
-
       <div className='min-h-screen'>
         {/* Navbar */}
         <Navbar />

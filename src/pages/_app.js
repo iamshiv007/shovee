@@ -38,8 +38,8 @@ export default function App({ Component, pageProps }) {
               <meta content="This is an application where anybody can create their personal portfolio website by easily filling out details." name="description" />
               <meta content="portfolio generator, free portfolio generator, best personal portfolio, Next.js personal portfolio" name="keywords" />
               <meta content="Shivraj Gurjar" name="author" />
-
             </Head>
+
             <Component {...pageProps} />
           </AlertProvider>
         </ThemeProvider>
