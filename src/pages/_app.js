@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { Provider } from "react-redux"
 import { Tooltip } from "react-tooltip"
 import "react-tooltip/dist/react-tooltip.css"
@@ -29,6 +30,16 @@ export default function App({ Component, pageProps }) {
             />
             {/* Analytics */}
             <Analytics />
+
+            {/* Head */}
+            <Head>
+              <title>Shovee</title>
+              <meta content="Shovee - Personal Portfolio Generator" name="title" />
+              <meta content="This is an application where anybody can create their personal portfolio website by easily filling out details." name="description" />
+              <meta content="portfolio generator, free portfolio generator, best personal portfolio, Next.js personal portfolio" name="keywords" />
+              <meta content="Shivraj Gurjar" name="author" />
+
+            </Head>
             <Component {...pageProps} />
           </AlertProvider>
         </ThemeProvider>
