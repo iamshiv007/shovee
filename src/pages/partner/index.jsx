@@ -19,9 +19,9 @@ const Partner = () => {
           <div className='mt-4'>
             <Link
               className='text-white py-1 px-3 font-semibold bg-blue-600 hover:bg-blue-700 rounded'
-              href='/portfolio/form/home'
+              href='mailto:softdev.shivraj@gmail.com'
             >
-              Share Link
+              Share here
             </Link>
           </div>
         </div>
