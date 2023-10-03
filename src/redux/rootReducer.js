@@ -15,10 +15,12 @@ import projectReducer from "./reducers/projectReducer";
 import projectDataReducer from "./reducers/projectDataReducer";
 import mailReducer from "./reducers/mailReducer";
 import feedbackReducer from "./reducers/feedbackReducer";
+import allHomeDataReducer from "./reducers/allHomeDataReducer";
 
 const rootReducer = combineReducers({
     home: homeReducer,
     homeData: homeDataReducer,
+    allHomeData: allHomeDataReducer,
     sameFirstNameData: sameFirstNameDataReducer,
     about: aboutReducer,
     aboutData: aboutDataReducer,

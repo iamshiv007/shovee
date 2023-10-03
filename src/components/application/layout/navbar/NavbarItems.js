@@ -4,6 +4,10 @@ export const NavbarMenu = [
         link: "/",
     },
     {
+        name: "Developers",
+        link: "/developers",
+    },
+    {
         name: "Partner",
         link: "/partner",
     },
@@ -14,5 +18,5 @@ export const NavbarMenu = [
     {
         name: "Feedback",
         link: "/feedback",
-    }
+    },
 ];

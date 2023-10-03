@@ -13,6 +13,7 @@ import { deleteExperienceFailed, deleteExperienceRequest, deleteExperienceSucces
 import { getExperienceFailed, getExperienceRequest, getExperienceSuccess } from "../reducers/experienceDataReducer";
 import { deleteProjectFailed, deleteProjectRequest, deleteProjectSuccess, newProjectFailed, newProjectRequest, newProjectSuccess, updateProjectFailed, updateProjectRequest, updateProjectSuccess } from "../reducers/projectReducer";
 import { getProjectFailed, getProjectRequest, getProjectSuccess } from "../reducers/projectDataReducer";
+import { getAllHomeFailed, getAllHomeRequest, getAllHomeSuccess } from "../reducers/allHomeDataReducer";
 
 // 1. Create new home
 export const createHome = (formData) => async (dispatch) => {
@@ -118,6 +119,26 @@ export const getSameFirstName = (firstName) => async (dispatch) => {
     }
 }
 
+// 5. Get all home data by
+export const getAllHome = () => async (dispatch) => {
+    dispatch(getAllHomeRequest());
+
+    try {
+        const { data } = await axios.get(
+            "/api/portfolio/get/home/all"
+        );
+
+        dispatch(getAllHomeSuccess(data));
+    } catch (error) {
+        dispatch(
+            getAllHomeFailed(
+                error?.response?.data.message ||
+                error.message ||
+                "Something went wrong !"
+            )
+        );
+    }
+};
 // 6. Create new about data
 export const createAbout = (formData) => async (dispatch) => {
     dispatch(newAboutRequest());
