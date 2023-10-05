@@ -57,6 +57,16 @@ export default function Home() {
 
   return (
     <Fragment>
+      {/* Head */}
+      <Head>
+        <title>Shovee</title>
+        <meta content="Shovee - Personal Portfolio Generator" name="title" />
+        <meta content="Shovee is the best personal portfolio generator that allows anyone to effortlessly create their own impressive portfolio website. Showcase your skills, achievements, and more with Shovee." name="description" />
+        <meta content="portfolio generator, free portfolio generator, best personal portfolio, Next.js personal portfolio" name="keywords" />
+        <meta content="Shivraj Gurjar" name="author" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+      </Head>
+
       <div className='min-h-screen'>
         {/* Navbar */}
         <Navbar />
@@ -67,9 +77,9 @@ export default function Home() {
         {loading ? <Loader /> : <div className='min-h-screen flex flex-col justify-center items-center gap-5'>
           {user?.email && home?.userName ?
             <>
-              <p className='p-2 text-4xl text-center font-semibold'>
+              <h1 className='p-2 text-4xl text-center font-semibold'>
                 Update Your Personal Portfolio.
-              </p>
+              </h1>
               <div className="flex gap-3">
                 {/* Demo Button */}
                 <Link
@@ -89,9 +99,9 @@ export default function Home() {
             </>
             :
             <>
-              <p className='p-2 text-4xl text-center font-semibold'>
+              <h1 className='p-2 text-4xl text-center font-semibold'>
                 Let&apos;s Build a Stunning Personal Portfolio !
-              </p>
+              </h1>
               <div className="flex gap-3">
                 {/* Demo Button */}
                 <Link

@@ -1,8 +1,24 @@
 import React, { Fragment } from "react";
+import Head from "next/head";
 
 const Loader = () => {
   return (
     <Fragment>
+      <Head>
+        <title>Shovee</title>
+        <meta content='Shovee - Personal Portfolio Generator' name='title' />
+        <meta
+          content='Shovee is the best personal portfolio generator that allows anyone to effortlessly create their own impressive portfolio website. Showcase your skills, achievements, and more with Shovee.'
+          name='description'
+        />
+        <meta
+          content='portfolio generator, free portfolio generator, best personal portfolio, Next.js personal portfolio'
+          name='keywords'
+        />
+        <meta content='Shivraj Gurjar' name='author' />
+        <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+      </Head>
+
       <div className='h-screen flex items-center justify-center'>
         <div role='status'>
           <svg
