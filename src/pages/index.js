@@ -61,7 +61,7 @@ export default function Home() {
       <Head>
         <title>Shovee - Personal Portfolio Generator</title>
         <meta content="Shovee - Personal Portfolio Generator" name="title" />
-        <meta content="Shovee is the best personal portfolio generator that allows anyone to effortlessly create their own impressive portfolio website. Showcase your skills, achievements, and more with Shovee." name="description" />
+        <meta content="Shovee is the best personal portfolio generator that allows anyone to effortlessly create their own impressive portfolio website. Showcase your skills, achievements." name="description" />
         <meta content="portfolio generator, free portfolio generator, best personal portfolio, Next.js personal portfolio" name="keywords" />
         <meta content="Shivraj Gurjar" name="author" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -73,11 +73,18 @@ export default function Home() {
         {/* ChatBox */}
         <ChatBox />
 
-        {/* Text  */}
-        {loading ? <Loader /> : <div className='min-h-screen flex flex-col justify-center items-center gap-5'>
+        <div className="min-h-[50vh] pt-[100px] flex flex-col justify-center items-center gap-5 ">
+          <h1 className="text-xl md:text-3xl text-[#159e6e] text-center font-semibold p-2">Welcome to the best Personal Portfolio Generator.</h1>
+          <h2 className="text-sm md:text-lg text-[#17c1ff] text-center">Simple and attractive UI design.</h2>
+          <h2 className="text-sm md:text-lg text-[#17c1ff] text-center">Both light and dark themes.</h2>
+          <h2 className="text-sm md:text-lg text-[#17c1ff] text-center">Animation effects on scroll.</h2>
+          <h2 className="text-sm md:text-lg text-[#17c1ff] text-center">Easy-to-update.</h2>
+        </div>
+
+        {loading ? <Loader /> : <div className='min-h-[40vh] flex flex-col justify-center items-center gap-5'>
           {user?.email && home?.userName ?
             <>
-              <h1 className='p-2 text-4xl text-center font-semibold'>
+              <h1 className='p-2 text-xl md:text-3xl text-center font-semibold'>
                 Update Your Personal Portfolio.
               </h1>
               <div className="flex gap-3">
@@ -99,7 +106,7 @@ export default function Home() {
             </>
             :
             <>
-              <h1 className='p-2 text-4xl text-center font-semibold'>
+              <h1 className='p-2 text-xl md:text-3xl text-center font-semibold'>
                 Let&apos;s Build a Stunning Personal Portfolio !
               </h1>
               <div className="flex gap-3">
