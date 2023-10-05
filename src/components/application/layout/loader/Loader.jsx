@@ -21,10 +21,8 @@ const Loader = () => {
         <meta content='Shivraj Gurjar' name='author' />
         <meta content='width=device-width, initial-scale=1.0' name='viewport' />
       </Head>
-
       {/* Navbar
       <Navbar /> */}
-
       <div className='h-screen flex items-center justify-center'>
         <div role='status'>
           <svg
@@ -46,7 +44,7 @@ const Loader = () => {
           <span className='sr-only'>Loading...</span>
         </div>
       </div>
-
+      Footer
       {/* <Footer /> */}
     </Fragment>
   );
