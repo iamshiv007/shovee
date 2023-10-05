@@ -11,7 +11,7 @@ import { useAuthContext } from "@/context/authContext"
 import { authGetHome } from "@/redux/actions/portfolioActions"
 import { clearErrors } from "@/redux/reducers/homeDataReducer"
 import ChatBox from "@/components/application/tawto/chatbox"
-import CustomLoader from "@/components/application/layout/loader/cutomLoader"
+import CustomLoader from "@/components/application/layout/loader/CutomLoader"
 
 const inter = Inter({ subsets: ["latin"] })
 
