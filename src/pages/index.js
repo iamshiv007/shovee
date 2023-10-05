@@ -6,18 +6,18 @@ import { useDispatch, useSelector } from "react-redux"
 
 import Navbar from "@/components/application/layout/navbar/Navbar"
 import Footer from "@/components/application/layout/footer/Footer"
-import Loader from "@/components/application/layout/loader/Loader"
 import { useAlert } from "@/context/alertContext"
 import { useAuthContext } from "@/context/authContext"
 import { authGetHome } from "@/redux/actions/portfolioActions"
 import { clearErrors } from "@/redux/reducers/homeDataReducer"
 import ChatBox from "@/components/application/tawto/chatbox"
+import CustomLoader from "@/components/application/layout/loader/cutomLoader"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export default function Home() {
   const { showAlert } = useAlert()
-  const { user } = useAuthContext()
+  const { user, loading: userLoading } = useAuthContext()
   const dispatch = useDispatch()
 
   const { home, loading, error } = useSelector(state => state.homeData)
@@ -59,9 +59,9 @@ export default function Home() {
     <Fragment>
       {/* Head */}
       <Head>
-        <title>Shovee - Personal Portfolio Generator</title>
-        <meta content="Shovee - Personal Portfolio Generator" name="title" />
-        <meta content="Shovee is the best personal portfolio generator that allows anyone to effortlessly create their own impressive portfolio website. Showcase your skills, achievements." name="description" />
+        <title>Shovee Personal Portfolio Generator</title>
+        <meta content="Shovee Personal Portfolio Generator" name="title" />
+        <meta content="Shovee is the best personal portfolio generator that allows anyone to effortlessly create their own impressive portfolio website." name="description" />
         <meta content="portfolio generator, free portfolio generator, best personal portfolio, Next.js personal portfolio" name="keywords" />
         <meta content="Shivraj Gurjar" name="author" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -81,12 +81,12 @@ export default function Home() {
           <h2 className="text-sm md:text-lg text-[#17c1ff] text-center">Easy-to-update.</h2>
         </div>
 
-        {loading ? <Loader /> : <div className='min-h-[40vh] flex flex-col justify-center items-center gap-5'>
+        {loading || userLoading ? <CustomLoader /> : <div className='min-h-[40vh] flex flex-col justify-center items-center gap-5'>
           {user?.email && home?.userName ?
             <>
-              <h1 className='p-2 text-xl md:text-3xl text-center font-semibold'>
+              <p className='p-2 text-xl md:text-3xl text-center font-semibold'>
                 Update Your Personal Portfolio.
-              </h1>
+              </p>
               <div className="flex gap-3">
                 {/* Demo Button */}
                 <Link
@@ -106,9 +106,9 @@ export default function Home() {
             </>
             :
             <>
-              <h1 className='p-2 text-xl md:text-3xl text-center font-semibold'>
+              <p className='p-2 text-xl md:text-3xl text-center font-semibold'>
                 Let&apos;s Build a Stunning Personal Portfolio !
-              </h1>
+              </p>
               <div className="flex gap-3">
                 {/* Demo Button */}
                 <Link
