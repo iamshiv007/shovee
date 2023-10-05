@@ -1,14 +1,17 @@
 import React, { Fragment } from "react";
 import Head from "next/head";
 
+import Navbar from "../navbar/Navbar";
+import Footer from "../footer/Footer";
+
 const Loader = () => {
   return (
     <Fragment>
       <Head>
-        <title>Shovee</title>
+        <title>Shovee - Personal Portfolio Generator</title>
         <meta content='Shovee - Personal Portfolio Generator' name='title' />
         <meta
-          content='Shovee is the best personal portfolio generator that allows anyone to effortlessly create their own impressive portfolio website. Showcase your skills, achievements, and more with Shovee.'
+          content='Shovee is the best personal portfolio generator that allows anyone to effortlessly create their own impressive portfolio website. Showcase your kills, achievements, and more with Shovee.'
           name='description'
         />
         <meta
@@ -18,6 +21,9 @@ const Loader = () => {
         <meta content='Shivraj Gurjar' name='author' />
         <meta content='width=device-width, initial-scale=1.0' name='viewport' />
       </Head>
+
+      {/* Navbar */}
+      <Navbar />
 
       <div className='h-screen flex items-center justify-center'>
         <div role='status'>
@@ -40,6 +46,8 @@ const Loader = () => {
           <span className='sr-only'>Loading...</span>
         </div>
       </div>
+
+      <Footer />
     </Fragment>
   );
 };

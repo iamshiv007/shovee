@@ -59,7 +59,7 @@ export default function Home() {
     <Fragment>
       {/* Head */}
       <Head>
-        <title>Shovee</title>
+        <title>Shovee - Personal Portfolio Generator</title>
         <meta content="Shovee - Personal Portfolio Generator" name="title" />
         <meta content="Shovee is the best personal portfolio generator that allows anyone to effortlessly create their own impressive portfolio website. Showcase your skills, achievements, and more with Shovee." name="description" />
         <meta content="portfolio generator, free portfolio generator, best personal portfolio, Next.js personal portfolio" name="keywords" />
