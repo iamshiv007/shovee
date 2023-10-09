@@ -22,8 +22,7 @@ const About = () => {
           <div className={style.container}>
             {/* Person Image */}
             <motion.div
-              className='m-auto'
-              initial={{ opacity: 0, x: -400 }}
+              initial={{ opacity: 0, x: -200 }}
               transition={{ duration: 0.3 }}
               whileInView={{ opacity: 1, x: 0 }}
             >
@@ -43,7 +42,7 @@ const About = () => {
             </motion.div>
             <motion.div
               className={style.detailsWrapper}
-              initial={{ opacity: 0, x: 400 }}
+              initial={{ opacity: 0, x: 200 }}
               transition={{ duration: 0.3 }}
               whileInView={{ opacity: 1, x: 0 }}
             >
@@ -119,9 +118,9 @@ const style = {
   mainContainer:
     "shadow-zinc-300 dark:shadow-zinc-700 shadow-sm overflow-x-hidden",
   container:
-    "pb-[30px] px-[20px] md:px-[100px] lg:px-[200px] md:flex gap-[50px]",
+    "pb-[30px] px-[20px] md:px-[100px] lg:px-[200px] md:flex items-center gap-[50px]",
   image:
-    "placeholder:shadow-zinc-300 dark:shadow-zinc-700 shadow-sm bg-cover bg-no-repeat max-h-[500px] rounded object-contain",
+    "m-auto placeholder:shadow-zinc-300 dark:shadow-zinc-700 shadow-sm bg-cover bg-no-repeat max-h-[500px] rounded object-contain",
   detailsWrapper:
     "text-lg mt-4 md:mt-0 md:w-[50%] text-center md:text-left rounded",
   name: "text-3xl text-center md:text-left font-semibold text-[#159e6e] dark:text-[#17c1ff]",

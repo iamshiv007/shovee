@@ -41,7 +41,7 @@ const Home = () => {
         <section id='home'>
           <div className={style.container}>
             <motion.div
-              initial={{ opacity: 0, x: -400 }}
+              initial={{ opacity: 0, x: -200 }}
               transition={{ duration: 0.3 }}
               whileInView={{ opacity: 1, x: 0 }}
             >
@@ -75,7 +75,7 @@ const Home = () => {
             {/* Image */}
             <motion.div
               className={style.image}
-              initial={{ opacity: 0, x: 400 }}
+              initial={{ opacity: 0, x: 200 }}
               style={
                 home.gender && home.gender === "Female"
                   ? { backgroundImage: "url(/images/female.png)" }
