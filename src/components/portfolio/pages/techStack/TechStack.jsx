@@ -53,7 +53,6 @@ const TechStack = () => {
             className={style.btnGroup}
             initial={{ opacity: 0, scale: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
             whileInView={{ opacity: 1, scale: 1 }}
           >
             {/* Section Buttons Group */}
@@ -81,7 +80,6 @@ const TechStack = () => {
                   initial={{ opacity: 0, scale: 0 }}
                   key={tech.name}
                   transition={{ duration: 0.5 }}
-                  viewport={{ once: true }}
                   whileInView={{ opacity: 1, scale: 1 }}
                 >
                   {/* Tech Icon */}

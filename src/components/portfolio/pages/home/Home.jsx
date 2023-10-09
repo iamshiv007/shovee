@@ -42,8 +42,7 @@ const Home = () => {
           <div className={style.container}>
             <motion.div
               initial={{ opacity: 0, x: -400 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.3 }}
               whileInView={{ opacity: 1, x: 0 }}
             >
               <p className={style.text}>Hi There !</p>
@@ -82,8 +81,7 @@ const Home = () => {
                   ? { backgroundImage: "url(/images/female.png)" }
                   : { backgroundImage: "url(/images/male.png)" }
               }
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.3 }}
               whileInView={{ opacity: 1, x: 0 }}
             />
           </div>

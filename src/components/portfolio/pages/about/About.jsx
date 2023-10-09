@@ -24,8 +24,7 @@ const About = () => {
             <motion.div
               className='m-auto'
               initial={{ opacity: 0, x: -400 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.3 }}
               whileInView={{ opacity: 1, x: 0 }}
             >
               <Image
@@ -43,11 +42,9 @@ const About = () => {
               />
             </motion.div>
             <motion.div
-              animate={{ opacity: 1, x: 0 }}
               className={style.detailsWrapper}
               initial={{ opacity: 0, x: 400 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.3 }}
               whileInView={{ opacity: 1, x: 0 }}
             >
               {/* Full Name */}

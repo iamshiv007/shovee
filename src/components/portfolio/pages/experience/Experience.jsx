@@ -35,7 +35,6 @@ const Experience = () => {
                   initial={{ opacity: 0, scale: 0 }}
                   key={experience.companyName}
                   transition={{ duration: 0.5 }}
-                  viewport={{ once: true }}
                   whileInView={{ opacity: 1, scale: 1 }}
                 >
                   <div
@@ -102,7 +101,6 @@ const Experience = () => {
                   initial={{ opacity: 0, scale: 0 }}
                   key={experience.companyName}
                   transition={{ duration: 0.5 }}
-                  viewport={{ once: true }}
                   whileInView={{ opacity: 1, scale: 1 }}
                 >
                   {/* Details Show and Hide Button */}
