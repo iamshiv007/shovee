@@ -70,3 +70,7 @@ textarea:focus {
   opacity: 1;
   scale: 1;
 }
+
+.pageHeading {
+  @apply text-3xl font-bold text-center pt-4 pb-8 flex justify-center items-center gap-3;
+}
