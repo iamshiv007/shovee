@@ -1,14 +1,12 @@
 "use client";
-import React, { Fragment, useRef, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { IoSchoolSharp } from "react-icons/io5";
 
 const Education = () => {
   const [educations, setEducations] = useState([]);
-  const [isEducation, setIsEducation] = useState(false);
-  const educationRef = useRef();
-  const educationBoxesRef = useRef();
 
   const { education, loading } = useSelector((state) => state.educationData);
 
@@ -18,58 +16,28 @@ const Education = () => {
     }
   }, [education]);
 
-  // Scroll Animation
-  useEffect(() => {
-    if (educationRef.current) {
-      const getScreenWidth = () =>
-        window.innerWidth ||
-        document.documentElement.clientWidth ||
-        document.body.clientWidth;
-
-      const educationObserver = new IntersectionObserver(
-        ([educationEntry]) => {
-          setIsEducation(educationEntry.isIntersecting);
-        },
-        {
-          rootMargin: `${getScreenWidth() <= 700 ? "-100px" : "-300px"}`,
-        }
-      );
-
-      educationObserver.observe(educationRef.current);
-
-      if (isEducation) {
-        educationBoxesRef.current.classList.add("pop-up-child");
-      } else {
-        educationBoxesRef.current.classList.remove("pop-up-child");
-      }
-    }
-  }, [isEducation, educationRef, education]);
-
   return (
     <Fragment>
       {!loading && education?.userName && (
-        <section
-          className='shadow-zinc-300 dark:shadow-zinc-700 shadow-sm overflow-x-hidden'
-          id='education'
-          ref={educationRef}
-        >
-          <h2 className='text-3xl font-bold text-center pt-4 pb-8 flex justify-center items-center gap-3'>
+        <section className={style.mainContainer} id='education'>
+          <h2 className='pageHeading'>
             <IoSchoolSharp /> Education
           </h2>
 
-          <div
-            className='min-h-[400px] pop-down-child pb-[30px] px-[20px] md:px-[100px] lg:px-[200px] flex flex-col justify-center gap-[20px] md:gap-[50px]'
-            ref={educationBoxesRef}
-          >
+          <div className={style.container}>
             {educations.map((education) => (
-              <div
-                className='transition-all duration-700 flex border border-zinc-300 dark:border-zinc-700 shadow-md shadow-zinc-300 dark:shadow-zinc-700 rounded gap-6'
+              <motion.div
+                className={style.educationBox}
+                initial={{ opacity: 0, scale: 0 }}
                 key={education.degree}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                whileInView={{ opacity: 1, scale: 1 }}
               >
                 {/* Institution Image */}
                 <Image
                   alt={education.degree}
-                  className='hidden md:block'
+                  className={style.image}
                   height={150}
                   src={
                     education?.institutionImage?.imageUrl ||
@@ -77,15 +45,13 @@ const Education = () => {
                   }
                   width={150}
                 />
-                <div className='flex flex-col gap-2 p-3 md:p-1'>
+                <div className={style.detailsWrapper}>
                   {/* Degree Name */}
-                  <p className='text-xl md:text-2xl font-bold text-red-600'>
-                    {education.degree}
-                  </p>
+                  <p className={style.degreeName}>{education.degree}</p>
                   {/* Institution Name */}
                   <p>{education.institution}</p>
                   {/* Study Period and Status */}
-                  <div className=' text-blue-600'>
+                  <div className={style.otherText}>
                     {education.studyPeriod}{" "}
                     {education.studyPeriod && education.status && (
                       <p className='inline'>&nbsp; | &nbsp;</p>
@@ -93,7 +59,7 @@ const Education = () => {
                     {education.status}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </section>
@@ -103,3 +69,16 @@ const Education = () => {
 };
 
 export default Education;
+
+const style = {
+  mainContainer:
+    "shadow-zinc-300 dark:shadow-zinc-700 shadow-sm overflow-x-hidden",
+  container:
+    "min-h-[400px] pb-[30px] px-[20px] md:px-[100px] lg:px-[200px] flex flex-col justify-center gap-[20px] md:gap-[50px]",
+  educationBox:
+    "flex border border-zinc-300 dark:border-zinc-700 shadow-md shadow-zinc-300 dark:shadow-zinc-700 rounded gap-6",
+  image: "hidden md:block",
+  detailsWrapper: "flex flex-col gap-2 p-3 md:p-1",
+  degreeName: "text-xl md:text-2xl font-bold text-red-600",
+  otherText: "text-blue-600",
+};

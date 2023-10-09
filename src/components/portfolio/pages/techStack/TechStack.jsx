@@ -1,7 +1,7 @@
 "use client";
 import React, { Fragment, useState, useEffect } from "react";
-import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
 import { FaLaptopCode } from "react-icons/fa";
 
 import { TechStackOptions } from "@/components/application/layout/input/optionsData/techStackOptions";

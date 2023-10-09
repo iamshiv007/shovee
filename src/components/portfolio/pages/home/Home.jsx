@@ -2,8 +2,8 @@
 import React, { Fragment, useEffect, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
 
 import { getArticle, getLastWord, removeLastWord } from "../../utils/helper";
 
