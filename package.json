@@ -17,6 +17,7 @@
     "eslint": "8.50.0",
     "eslint-config-next": "13.5.3",
     "firebase": "^10.4.0",
+    "framer-motion": "^10.16.4",
     "mongoose": "^7.5.3",
     "next": "13.5.3",
     "nodemailer": "^6.9.5",

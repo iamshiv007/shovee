@@ -1,74 +1,31 @@
 "use client";
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useSelector } from "react-redux";
+import { motion } from "framer-motion";
+
+import { getArticle, getLastWord, removeLastWord } from "../../utils/helper";
 
 import Loader from "@/components/application/layout/loader/Loader";
 
 const Home = () => {
-  const [isHome, setIsHome] = useState(false);
-  const [lastWordProfileName, setLastWordProfileName] = useState("");
-  const [startingWordsProfileName, setStartingWordsProfileName] = useState("");
-  const [profileNameArticle, setProfileNameArticle] = useState("");
-
-  const homeRef = useRef();
-  const introRef = useRef();
-  const profileRef = useRef();
+  const [lastWord, setLastWord] = useState("");
+  const [startingWords, setStartingWords] = useState("");
+  const [article, setArticle] = useState("");
 
   const { home } = useSelector((state) => state.homeData);
-
-  // Intersection observer animation on scroll
-  useEffect(() => {
-    const getScreenWidth = () =>
-      window.innerWidth ||
-      document.documentElement.clientWidth ||
-      document.body.clientWidth;
-
-    // Scroll Animation
-    if (homeRef.current) {
-      const homeObserver = new IntersectionObserver(
-        ([homeEntry]) => {
-          setIsHome(homeEntry.isIntersecting);
-        },
-        {
-          rootMargin: `${getScreenWidth() <= 700 ? "-100px" : "-300px"}`,
-        }
-      );
-
-      homeObserver.observe(homeRef.current);
-
-      if (isHome) {
-        profileRef.current.classList.add("slide-in");
-        introRef.current.classList.add("slide-in");
-      } else {
-        profileRef.current.classList.remove("slide-in");
-        introRef.current.classList.remove("slide-in");
-      }
-    }
-  }, [homeRef, home, isHome]);
 
   // fetched data converted in desire format
   useEffect(() => {
     if (home.userName) {
-      const profileNameArray = home?.profileName.split(" ");
-      const profileNameLength = profileNameArray?.length;
-      setLastWordProfileName(
-        home?.profileName?.split(" ")[profileNameLength - 1]
-      );
+      const profileName = home.profileName;
 
-      setStartingWordsProfileName(
-        profileNameArray?.splice(0, profileNameLength - 1).join(" ")
-      );
-      const profileNameFirstChar = home?.profileName
-        ?.split("")[0]
-        .toLowerCase();
-      const vowelsArray = ["a", "e", "i", "o", "u"];
-      if (vowelsArray.includes(profileNameFirstChar)) {
-        setProfileNameArticle("an");
-      } else {
-        setProfileNameArticle("a");
-      }
+      setLastWord(getLastWord(profileName));
+
+      setStartingWords(removeLastWord(profileName));
+
+      setArticle(getArticle(profileName));
     }
   }, [home]);
 
@@ -82,60 +39,52 @@ const Home = () => {
 
       {home?.userName ? (
         <section id='home'>
-          <div
-            className='min-h-[100vh] overflow-x-hidden px-[20px] md:px-[200px] lg:px-[200px] pt-[80px] md:pt-0 md:flex items-center justify-between shadow-zinc-300 dark:shadow-zinc-700 shadow-sm'
-            ref={homeRef}
-          >
-            <div
-              className='translate-x-[-500px] transition-all duration-700 opacity-0'
-              ref={introRef}
+          <div className={style.container}>
+            <motion.div
+              initial={{ opacity: 0, x: -400 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, x: 0 }}
             >
-              <p className='py-2 text-2xl md:text-4xl font-semibold font-sans'>
-                Hi There !
-              </p>
+              <p className={style.text}>Hi There !</p>
               {/* Profile Name */}
-              <p className='text-2xl md:text-4xl py-2 font-semibold font-sans'>
-                I&apos;m {profileNameArticle} {startingWordsProfileName}{" "}
-                <span className='text-[#159e6e] dark:text-[#17c1ff]'>
-                  {" "}
-                  {lastWordProfileName}
-                  <span className='text-white'>|</span>
-                </span>
+              <p className={style.text}>
+                I&apos;m {article} {startingWords}{" "}
+                <span className={style.colorText}>{lastWord}</span>
+                <span>|</span>
               </p>
-              <div className='mt-5 md:mt-10 flex gap-3'>
+              <div className={style.btnWrapper}>
                 {/* Hire Me Button */}
-                {home?.email && (
-                  <Link
-                    className='text-white text-xl font-semibold rounded bg-red-400 hover:bg-red-500 px-2 py-1'
-                    href={"#getInTouch"}
-                  >
+                {home.email && (
+                  <Link className={style.hireMeBtn} href={"#getInTouch"}>
                     Hire me
                   </Link>
                 )}
                 {/* Download CV Button */}
-                {home?.cv && (
+                {home.cv && (
                   <Link
-                    className='text-xl font-semibold rounded border border-red-500 hover:text-white hover:bg-red-500 px-2 py-1'
-                    href={home?.cv}
+                    className={style.downloadbtn}
+                    href={home.cv}
                     target='_blank'
                   >
                     Download CV
                   </Link>
                 )}
               </div>
-            </div>
+            </motion.div>
 
             {/* Image */}
-            <div
-              className={
-                "translate-x-[500px] transition-all opacity-0 duration-700 w-[180px] h-[300px] md:w-[240px] md:h-[400px] bg-cover m-auto md:m-0 mt-[40px] md:mt-0 bg-no-repeat"
-              }
-              ref={profileRef}
+            <motion.div
+              className={style.image}
+              initial={{ opacity: 0, x: 400 }}
               style={
-                home?.gender && home?.gender === "Female"
+                home.gender && home.gender === "Female"
                   ? { backgroundImage: "url(/images/female.png)" }
                   : { backgroundImage: "url(/images/male.png)" }
               }
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, x: 0 }}
             />
           </div>
         </section>
@@ -147,3 +96,17 @@ const Home = () => {
 };
 
 export default Home;
+
+const style = {
+  container:
+    "min-h-[100vh] overflow-x-hidden px-[20px] md:px-[200px] lg:px-[200px] pt-[80px] md:pt-0 md:flex items-center justify-between shadow-zinc-300 dark:shadow-zinc-700 shadow-sm",
+  text: "py-2 text-2xl md:text-4xl font-semibold font-sans",
+  colorText: "text-[#159e6e] dark:text-[#17c1ff]",
+  btnWrapper: "mt-5 md:mt-10 flex gap-3",
+  hireMeBtn:
+    "text-white text-xl font-semibold rounded bg-red-400 hover:bg-red-500 px-2 py-1",
+  downloadbtn:
+    "text-xl font-semibold rounded border border-red-500 hover:text-white hover:bg-red-500 px-2 py-1",
+  image:
+    "w-[180px] h-[300px] md:w-[240px] md:h-[400px] bg-cover m-auto md:m-0 mt-[40px] md:mt-0 bg-no-repeat",
+};
