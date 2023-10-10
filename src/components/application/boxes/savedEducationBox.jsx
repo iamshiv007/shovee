@@ -55,9 +55,9 @@ export const SavedEducationBox = ({
   };
 
   return (
-    <div className='mb-3'>
-      <div className='p-2 rounded border border-gray-600 transition-all'>
-        <div className='flex gap-3'>
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <div className={styles.flexContainer}>
           {/* Institution Image */}
           {institutionImagePreview && (
             <div>
@@ -78,12 +78,12 @@ export const SavedEducationBox = ({
           </div>
         </div>
       </div>
-      <div className='mt-3 flex justify-between items-center'>
-        <div className='flex gap-3'>
+      <div className={styles.buttonContainer}>
+        <div className={styles.buttonGroup}>
           {/* Up Button */}
           {index !== 0 && (
             <button
-              className='py-1 px-3 mr-4 font-semibold bg-gray-600 flex items-center gap-2 hover:bg-gray-700 border border-gray-400 rounded'
+              className={styles.arrowBtn}
               onClick={() => moveUp(index)}
               type='button'
             >
@@ -93,7 +93,7 @@ export const SavedEducationBox = ({
           {/* Down Button */}
           {index !== educationArray.length - 1 && (
             <button
-              className='py-1 px-3 mr-4 font-semibold bg-gray-600 flex items-center gap-2 hover:bg-gray-700 border border-gray-400 rounded'
+              className={styles.arrowBtn}
               onClick={() => moveDown(index)}
               type='button'
             >
@@ -101,10 +101,10 @@ export const SavedEducationBox = ({
             </button>
           )}
         </div>
-        <div className='flex gap-3'>
+        <div className={styles.buttonGroup}>
           {/* Edit Button */}
           <button
-            className='py-1 px-3 mr-4 font-semibold bg-yellow-600 hover:bg-yellow-700 rounded'
+            className={styles.editBtn}
             onClick={() => editEducation(index)}
             type='button'
           >
@@ -112,7 +112,7 @@ export const SavedEducationBox = ({
           </button>
           {/* Delete Button */}
           <button
-            className='py-1 px-3 font-semibold bg-red-600 hover:bg-red-700 rounded'
+            className={styles.deleteBtn}
             onClick={() => deleteEducation(index)}
             type='button'
           >
@@ -122,4 +122,17 @@ export const SavedEducationBox = ({
       </div>
     </div>
   );
+};
+
+export const styles = {
+  container: "mb-3",
+  card: "p-2 rounded border border-gray-600 transition-all",
+  flexContainer: "flex gap-3",
+  buttonContainer: "mt-3 flex justify-between items-center",
+  buttonGroup: "flex gap-3",
+  arrowBtn:
+    "py-1 px-3 mr-4 font-semibold bg-gray-600 flex items-center gap-2 hover:bg-gray-700 border border-gray-400 rounded",
+  editBtn:
+    "py-1 px-3 mr-4 font-semibold bg-yellow-600 hover:bg-yellow-700 rounded",
+  deleteBtn: "py-1 px-3 font-semibold bg-red-600 hover:bg-red-700 rounded",
 };

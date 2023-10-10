@@ -33,7 +33,9 @@ const Home = () => {
     <Fragment>
       <Head>
         <title>
-          {home?.firstName ? `${home?.firstName}'s` : "Personal"} Portfolio
+          {home?.firstName
+            ? `${home?.firstName}'s Portfolio`
+            : "Personal Portfolio"}
         </title>
       </Head>
 

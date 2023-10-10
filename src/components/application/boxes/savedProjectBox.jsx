@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { BiDownArrowAlt, BiUpArrowAlt } from "react-icons/bi";
 
+import { styles } from "./savedEducationBox";
+
 export const SavedProjectBox = ({
   projectName,
   projectArray,
@@ -55,9 +57,9 @@ export const SavedProjectBox = ({
   };
 
   return (
-    <div className='mb-3'>
-      <div className='p-2 rounded border border-gray-600 transition-all'>
-        <div className='flex gap-3'>
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <div className={styles.flexContainer}>
           {/* Image Preview */}
           {projectImagePreview && (
             <div>
@@ -78,12 +80,12 @@ export const SavedProjectBox = ({
           </div>
         </div>
       </div>
-      <div className='mt-3 flex justify-between items-center'>
-        <div className='flex gap-3'>
+      <div className={styles.buttonContainer}>
+        <div className={styles.buttonGroup}>
           {/* Arrow Up */}
           {index !== 0 && (
             <button
-              className='py-1 px-3 mr-4 font-semibold bg-gray-600 flex items-center gap-2 hover:bg-gray-700 border border-gray-400 rounded'
+              className={styles.arrowBtn}
               data-tooltip-content='Move Up'
               data-tooltip-id='my-tooltip'
               data-tooltip-place='left'
@@ -97,7 +99,7 @@ export const SavedProjectBox = ({
           {/* Arrow Down */}
           {index !== projectArray.length - 1 && (
             <button
-              className='py-1 px-3 mr-4 font-semibold bg-gray-600 flex items-center gap-2 hover:bg-gray-700 border border-gray-400 rounded'
+              className={styles.arrowBtn}
               data-tooltip-content='Move Down'
               data-tooltip-id='my-tooltip'
               data-tooltip-place='right'
@@ -108,10 +110,10 @@ export const SavedProjectBox = ({
             </button>
           )}
         </div>
-        <div className='flex gap-3'>
+        <div className={styles.buttonGroup}>
           {/* Edit Button */}
           <button
-            className='py-1 px-3 mr-4 font-semibold bg-yellow-600 hover:bg-yellow-700 rounded'
+            className={styles.editBtn}
             onClick={() => editProject(index)}
             type='button'
           >
@@ -119,7 +121,7 @@ export const SavedProjectBox = ({
           </button>
           {/* Delete Button */}
           <button
-            className='py-1 px-3 font-semibold bg-red-600 hover:bg-red-700 rounded'
+            className={styles.deleteBtn}
             onClick={() => deleteProject(index)}
             type='button'
           >

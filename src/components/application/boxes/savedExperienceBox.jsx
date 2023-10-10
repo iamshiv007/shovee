@@ -1,5 +1,7 @@
 import { BiDownArrowAlt, BiUpArrowAlt } from "react-icons/bi";
 
+import { styles } from "./savedEducationBox";
+
 export const SavedExperienceBox = ({
   companyName,
   experienceArray,
@@ -56,21 +58,21 @@ export const SavedExperienceBox = ({
   };
 
   return (
-    <div className='mb-3'>
+    <div className={styles.container}>
       {/* Experience Details */}
-      <div className='p-2 rounded border border-gray-600 transition-all'>
+      <div className={styles.card}>
         <p>Company Name : {companyName}</p>
         <p>Location : {location}</p>
         <p>Job Role : {role}</p>
         <p>Time Period : {jobPeriod}</p>
         {details && <p>Details : {details}</p>}
       </div>
-      <div className='mt-3 flex justify-between items-center'>
-        <div className='flex gap-3'>
+      <div className={styles.buttonContainer}>
+        <div className={styles.buttonGroup}>
           {/* Up Button */}
           {index !== 0 && (
             <button
-              className='py-1 px-3 mr-4 font-semibold bg-gray-600 flex items-center gap-2 hover:bg-gray-700 border border-gray-400 rounded'
+              className={styles.arrowBtn}
               data-tooltip-content='Move Up'
               data-tooltip-id='my-tooltip'
               data-tooltip-place='left'
@@ -83,7 +85,7 @@ export const SavedExperienceBox = ({
           {/* Down Button */}
           {index !== experienceArray.length - 1 && (
             <button
-              className='py-1 px-3 mr-4 font-semibold bg-gray-600 flex items-center gap-2 hover:bg-gray-700 border border-gray-400 rounded'
+              className={styles.arrowBtn}
               data-tooltip-content='Move Down'
               data-tooltip-id='my-tooltip'
               data-tooltip-place='right'
@@ -95,9 +97,9 @@ export const SavedExperienceBox = ({
           )}
         </div>
         {/* Edit Button */}
-        <div className='flex gap-3'>
+        <div className={styles.buttonGroup}>
           <button
-            className='py-1 px-3 mr-4 font-semibold bg-yellow-600 hover:bg-yellow-700 rounded'
+            className={styles.editBtn}
             onClick={() => editExperience(index)}
             type='button'
           >
@@ -105,7 +107,7 @@ export const SavedExperienceBox = ({
           </button>
           {/* Delete Button */}
           <button
-            className='py-1 px-3 font-semibold bg-red-600 hover:bg-red-700 rounded'
+            className={styles.deleteBtn}
             onClick={() => deleteExperience(index)}
             type='button'
           >
