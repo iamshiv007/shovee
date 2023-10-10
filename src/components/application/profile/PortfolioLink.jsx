@@ -22,14 +22,11 @@ export const PortfolioLink = ({ home }) => {
 
   return (
     home?.userName && (
-      <div className='mt-2 flex items-center gap-3'>
-        <p className='text-2xl'>
+      <div className={styles.container}>
+        <p className={styles.icon}>
           <AiOutlineLink />
         </p>
-        <Link
-          className='text-lg w-[200px] md:w-auto py-1 text-blue-600 hover:underline overflow-scroll md:overflow-auto'
-          href={`/its/${home?.userName}`}
-        >
+        <Link className={styles.porfolioLink} href={`/its/${home?.userName}`}>
           {process.env.NEXT_PUBLIC_APPLICATION_URL}/its/
           {home?.userName}
         </Link>
@@ -38,7 +35,7 @@ export const PortfolioLink = ({ home }) => {
           text={`${process.env.NEXT_PUBLIC_APPLICATION_URL}/its/${home?.userName}`}
         >
           <button
-            className='text-white p-2 ml-2 bg-gray-700 rounded'
+            className={styles.copyBtn}
             data-tooltip-content={tooltipText}
             data-tooltip-id='my-tooltip'
             data-tooltip-place='right'
@@ -49,4 +46,12 @@ export const PortfolioLink = ({ home }) => {
       </div>
     )
   );
+};
+
+const styles = {
+  icon: "text-2xl",
+  container: "mt-2 flex items-center gap-3",
+  portfolioLink:
+    "text-lg w-[200px] md:w-auto py-1 text-blue-600 hover:underline overflow-scroll md:overflow-auto",
+  copyBtn: "text-white p-2 ml-2 bg-gray-700 rounded",
 };

@@ -12,33 +12,30 @@ export const PortfolioSections = ({ allSections }) => {
   return (
     <>
       <div>
-        <div className='flex items-center gap-2'>
+        <div className={styles.section}>
           <p>
             <AiFillHome />
           </p>
           <p>HOME</p>
         </div>
-        <div className='mt-3 flex justify-between'>
+        <div className={styles.btnWrapper}>
           {" "}
-          <Link
-            className='text-white font-semibold px-3 py-1 bg-yellow-600 hover:bg-yellow-700 rounded'
-            href={"/portfolio/update/home"}
-          >
+          <Link className={styles.updateBtn} href={"/portfolio/update/home"}>
             Update
           </Link>
         </div>
       </div>
       <div>
-        <div className='flex items-center gap-2'>
+        <div className={styles.section}>
           <p>
             <FiLink2 />
           </p>
           <p>SOCIAL MEDIA</p>
         </div>
-        <div className='mt-3 flex justify-between'>
+        <div className={styles.btnWrapper}>
           {" "}
           <Link
-            className='text-white font-semibold px-3 py-1 bg-yellow-600 hover:bg-yellow-700 rounded'
+            className={styles.updateBtn}
             href='/portfolio/update/socialMedia'
           >
             Update
@@ -50,23 +47,23 @@ export const PortfolioSections = ({ allSections }) => {
           {/* Delete Confirmation Modal */}
           <DeleteModal modal={modal} section={section} setModal={setModal} />
 
-          <div className='flex items-center gap-2'>
+          <div className={styles.section}>
             <p>{section.icon}</p>
             <p> {section.name.toUpperCase()}</p>
           </div>
-          <div className='mt-3 flex justify-between'>
+          <div className={styles.btnWrapper}>
             {" "}
             {section.data?.userName ? (
               <>
                 {section.loading && <SubmitLoader />}
                 <Link
-                  className='text-white font-semibold px-3 py-1 bg-yellow-600 hover:bg-yellow-700 rounded'
+                  className={styles.updateBtn}
                   href={`/portfolio/update/${section.name}`}
                 >
                   Update
                 </Link>
                 <button
-                  className='font-semibold px-3 py-1 bg-red-600 hover:bg-red-700 rounded'
+                  className={styles.deleteBtn}
                   disabled={section.loading}
                   onClick={() => setModal(section.name)}
                 >
@@ -75,7 +72,7 @@ export const PortfolioSections = ({ allSections }) => {
               </>
             ) : (
               <Link
-                className='text-white font-semibold px-3 py-1 bg-blue-600 hover:bg-blue-700 rounded'
+                className={styles.createBtn}
                 href={`/portfolio/form/${section.name}`}
               >
                 Create
@@ -86,4 +83,14 @@ export const PortfolioSections = ({ allSections }) => {
       ))}
     </>
   );
+};
+
+const styles = {
+  section: "flex items-center gap-2",
+  btnWrapper: "mt-3 flex justify-between",
+  updateBtn:
+    "text-white font-semibold px-3 py-1 bg-yellow-600 hover:bg-yellow-700 rounded",
+  deleteBtn: "font-semibold px-3 py-1 bg-red-600 hover:bg-red-700 rounded",
+  createBtn:
+    "text-white font-semibold px-3 py-1 bg-blue-600 hover:bg-blue-700 rounded",
 };
