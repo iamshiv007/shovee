@@ -12,25 +12,23 @@ const MobileNavbar = ({ showMenu, setShowMenu }) => {
   return (
     <Fragment>
       <div
-        className={`w-full h-screen bg-[rgba(255,255,255,0.3)] dark:bg-[rgba(0,0,0,0.3)] fixed ${
-          showMenu ? null : "hidden"
-        } top-0 left-0 z-10`}
+        className={`${style.mainContainer} ${showMenu ? null : "hidden"}`}
         onClick={() => setShowMenu(!showMenu)}
       >
         {/* Sidebar */}
         <div
-          className={`w-[70%] h-screen bg-white dark:bg-black shadow-sm shadow-gray-600 dark:shadow-gray-300 ${
+          className={`${style.container} ${
             showMenu ? null : "translate-x-[-450px]"
-          } transition-all duration-1000`}
+          } `}
         >
-          <div className='p-3 bg-gray-200 dark:bg-gray-800 flex justify-between items-center gap-3'>
+          <div className={style.top}>
             {/* Name Logo */}
-            <div className='flex items-center gap-2'>
-              <div className='text-white w-8 h-8 bg-[#159e6e] dark:bg-[#17c1ff] rounded-full flex justify-center items-center'>
+            <div className={style.left}>
+              <div className={style.avatar}>
                 {home?.firstName.split("")[0].toUpperCase()}
               </div>
-              <p className='text-gray-400 flex'>
-                <span className='text-lg font-bold'>
+              <p className={style.logo}>
+                <span className={style.name}>
                   {home?.firstName.toUpperCase()}
                 </span>{" "}
                 <DiTechcrunch />
@@ -39,21 +37,17 @@ const MobileNavbar = ({ showMenu, setShowMenu }) => {
 
             {/* Sidebar Close button */}
             <button
-              className='text-black dark:text-white text-3xl font-bold'
+              className={style.closeBtn}
               onClick={() => setShowMenu(!showMenu)}
             >
               <IoMdClose />
             </button>
           </div>
 
-          <div className='p-2 flex flex-col gap-2'>
+          <div className={style.menu}>
             {/* Navbar Links */}
             {NavbarMenu.map((navbar) => (
-              <Link
-                className='text-lg p-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 rounded'
-                href={navbar.link}
-                key={navbar.name}
-              >
+              <Link className={style.item} href={navbar.link} key={navbar.name}>
                 {navbar.name}
               </Link>
             ))}
@@ -65,3 +59,19 @@ const MobileNavbar = ({ showMenu, setShowMenu }) => {
 };
 
 export default MobileNavbar;
+
+const style = {
+  mainContainer:
+    "w-full h-screen bg-[rgba(255,255,255,0.3)] dark:bg-[rgba(0,0,0,0.3)] fixed top-0 left-0 z-10",
+  container:
+    "w-[70%] h-screen bg-white dark:bg-black shadow-sm shadow-gray-600 dark:shadow-gray-300 transition-all duration-1000",
+  top: "p-3 bg-gray-200 dark:bg-gray-800 flex justify-between items-center gap-3",
+  left: "flex items-center gap-2",
+  avatar:
+    "text-white w-8 h-8 bg-[#159e6e] dark:bg-[#17c1ff] rounded-full flex justify-center items-center",
+  logo: "text-gray-400 flex",
+  name: "text-lg font-bold",
+  closeBtn: "text-black dark:text-white text-3xl font-bold",
+  menu: "p-2 flex flex-col gap-2",
+  item: "text-lg p-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 rounded",
+};

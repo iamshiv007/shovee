@@ -11,18 +11,18 @@ const InputElement = ({
   value,
 }) => {
   return (
-    <div className='flex flex-col gap-1'>
+    <div className={style.container}>
       {/* Label */}
       <label htmlFor={id}>
         {label}
         {!required ? (
-          <span className='text-gray-400'>&nbsp;&nbsp;(Optional)</span>
+          <span className={style.optional}>&nbsp;&nbsp;(Optional)</span>
         ) : null}{" "}
       </label>
 
       {/* Input */}
       <input
-        className='md:w-[350px] px-2 py-1 dark:bg-gray-900 border border-gray-400 dark:border-gray-500 rounded'
+        className={style.input}
         id={id}
         name={name}
         onChange={handleInputChange}
@@ -36,3 +36,10 @@ const InputElement = ({
 };
 
 export default InputElement;
+
+const style = {
+  container: "flex flex-col gap-1",
+  optional: "text-gray-400",
+  input:
+    "md:w-[350px] px-2 py-1 dark:bg-gray-900 border border-gray-400 dark:border-gray-500 rounded",
+};

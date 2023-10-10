@@ -49,37 +49,27 @@ const Navbar = () => {
     home?.userName && (
       <Fragment>
         {/* Desktop Header */}
-        <div
-          className='w-full h-[70px] px-8 bg-[rgba(255,255,255,0.8)] dark:bg-[rgba(0,0,0,0.8)] backdrop-filter backdrop-blur-lg hidden md:flex justify-between items-center gap-4 shadow-sm shadow-gray-300 dark:shadow-gray-800 fixed z-10 transition-all duration-500'
-          style={{ top: top }}
-        >
+        <div className={style.container} style={{ top: top }}>
           {/* Name Logo */}
-          <p className='text-gray-400 flex'>
-            <span className='text-lg font-bold'>
-              {home?.firstName.toUpperCase()}
-            </span>{" "}
+          <p className={style.logo}>
+            <span className={style.name}>{home?.firstName.toUpperCase()}</span>{" "}
             <DiTechcrunch />
           </p>
-          <div className='h-full flex gap-4'>
+          <div className={style.menu}>
             {/* Navbar Links */}
             {NavbarMenu.map((navbar) => (
               <Link
-                className={"text-[#159e6e] dark:text-[#17c1ff] font-semibold"}
+                className={style.menuItem}
                 href={navbar.link}
                 key={navbar.name}
               >
-                <div className='h-full pb-1 hover:pb-0 px-2 flex items-center hover:border-b-4  border-[#159e6e] dark:border-[#17c1ff] transition-all'>
-                  {navbar.name}
-                </div>
+                <div className={style.itemText}>{navbar.name}</div>
               </Link>
             ))}
           </div>
           {/* Toggle Theme button */}
-          <div className='flex items-center gap-4'>
-            <button
-              className='text-xl text-[#159e6e] dark:text-[#17c1ff] hover:scale-110'
-              onClick={setThemeFun}
-            >
+          <div className={style.btnWrapper}>
+            <button className={style.themeBtn} onClick={setThemeFun}>
               {theme === "dark" ? (
                 <TbBulbFilled />
               ) : (
@@ -87,7 +77,7 @@ const Navbar = () => {
               )}
             </button>
             <div
-              className='p-1 border border-gray-500 rounded-full'
+              className={style.profileBtn}
               data-tooltip-content={user?.email ? "Profile" : "Login"}
               data-tooltip-id='my-tooltip'
               data-tooltip-place='left'
@@ -118,3 +108,17 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+const style = {
+  container:
+    "w-full h-[70px] px-8 bg-[rgba(255,255,255,0.8)] dark:bg-[rgba(0,0,0,0.8)] backdrop-filter backdrop-blur-lg hidden md:flex justify-between items-center gap-4 shadow-sm shadow-gray-300 dark:shadow-gray-800 fixed z-10 transition-all duration-500",
+  logo: "text-gray-400 flex",
+  name: "text-lg font-bold",
+  menu: "h-full flex gap-4",
+  menuItem: "text-[#159e6e] dark:text-[#17c1ff] font-semibold",
+  itemText:
+    "h-full pb-1 hover:pb-0 px-2 flex items-center hover:border-b-4  border-[#159e6e] dark:border-[#17c1ff] transition-all",
+  btnWrapper: "flex items-center gap-4",
+  themeBtn: "text-xl text-[#159e6e] dark:text-[#17c1ff] hover:scale-110",
+  profileBtn: "p-1 border border-gray-500 rounded-full",
+};

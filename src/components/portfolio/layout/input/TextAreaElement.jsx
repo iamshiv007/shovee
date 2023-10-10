@@ -11,18 +11,18 @@ const TextAreaElement = ({
   value,
 }) => {
   return (
-    <div className='flex flex-col gap-1'>
+    <div className={style.container}>
       {/* Lable */}
       <label htmlFor={id}>
         {label}
         {!required ? (
-          <span className='text-gray-400'>&nbsp;&nbsp;(Optional)</span>
+          <span className={style.optional}>&nbsp;&nbsp;(Optional)</span>
         ) : null}{" "}
       </label>
 
       {/* Input Textarea */}
       <textarea
-        className='md:w-[350px] px-2 py-1 dark:bg-gray-900 border border-gray-400 dark:border-gray-500 rounded'
+        className={style.textArea}
         cols={cols}
         id={id}
         name={name}
@@ -36,3 +36,10 @@ const TextAreaElement = ({
 };
 
 export default TextAreaElement;
+
+const style = {
+  container: "flex flex-col gap-1",
+  optional: "text-gray-400",
+  textArea:
+    "md:w-[350px] px-2 py-1 dark:bg-gray-900 border border-gray-400 dark:border-gray-500 rounded",
+};
