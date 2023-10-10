@@ -3,11 +3,11 @@ import React, { Fragment } from "react";
 const SubmitLoader = () => {
   return (
     <Fragment>
-      <div className='w-screen h-screen flex items-center justify-center bg-[#0000006e] fixed top-0 left-0 z-10'>
+      <div className={styles.container}>
         <div role='status'>
           <svg
             aria-hidden='true'
-            className='w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-[#159e6e] dark:fill-[#17c1ff]'
+            className={styles.loader}
             fill='none'
             viewBox='0 0 100 101'
             xmlns='http://www.w3.org/2000/svg'
@@ -29,3 +29,10 @@ const SubmitLoader = () => {
 };
 
 export default SubmitLoader;
+
+const styles = {
+  container:
+    "w-screen h-screen flex items-center justify-center bg-[#0000006e] fixed top-0 left-0 z-10",
+  loader:
+    "w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-[#159e6e] dark:fill-[#17c1ff]",
+};

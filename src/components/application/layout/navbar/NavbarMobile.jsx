@@ -6,6 +6,8 @@ import { TbBulbFilled } from "react-icons/tb";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineUser } from "react-icons/ai";
 
+import { style } from "@/components/portfolio/layout/navbar/NavbarMobile";
+
 const NavbarMobile = ({
   top,
   setShowMenu,
@@ -16,38 +18,32 @@ const NavbarMobile = ({
 }) => {
   return (
     // Mobile Header
-    <div
-      className='w-full px-5 py-3 bg-[#ffffffcc] dark:bg-[#000000cc] backdrop-filter backdrop-blur-lg flex justify-between md:hidden shadow-md shadow-gray-300 dark:shadow-gray-800 fixed z-10'
-      style={{ top }}
-    >
-      <div className='flex items-center gap-4'>
+    <div className={style.mainContainer} style={{ top }}>
+      <div className={style.left}>
         {/* Open Sidebar Button */}
         <button
-          className='text-black dark:text-white text-3xl font-semibold'
+          className={style.hamburger}
           onClick={() => setShowMenu(!showMenu)}
         >
           <GiHamburgerMenu />
         </button>
 
         {/* Brand Name */}
-        <Link className='w-[20%] flex items-center gap-2' href='/'>
+        <Link className={styles.brandWrapper} href='/'>
           <p>
-            <span className='text-[#17c1ff] font-semibold'>SHOVEE</span>
+            <span className={styles.brandName}>SHOVEE</span>
           </p>
         </Link>
       </div>
 
       {/* Toggle Theme Button */}
-      <div className='flex items-center gap-4'>
-        <button
-          className='text-[#159e6e] dark:text-[#17c1ff] text-2xl font-semibold hover:scale-110'
-          onClick={setThemeFun}
-        >
+      <div className={style.right}>
+        <button className={style.themeBtn} onClick={setThemeFun}>
           {theme === "dark" ? <TbBulbFilled /> : <BsFillLightningChargeFill />}
         </button>
         {/* Profile Icon */}
         <div
-          className='p-1 border border-gray-500 rounded-full'
+          className={style.profileBtn}
           data-tooltip-content={user?.email ? "Profile" : "Login"}
           data-tooltip-id='my-tooltip'
           data-tooltip-place='left'
@@ -62,3 +58,8 @@ const NavbarMobile = ({
 };
 
 export default NavbarMobile;
+
+const styles = {
+  brandWrapper: "w-[20%] flex items-center gap-2",
+  brandName: "text-[#17c1ff] font-semibold",
+};

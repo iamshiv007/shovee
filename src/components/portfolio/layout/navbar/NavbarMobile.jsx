@@ -56,7 +56,7 @@ const NavbarMobile = ({
 
 export default NavbarMobile;
 
-const style = {
+export const style = {
   mainContainer:
     "w-full px-5 py-3 bg-[#ffffffcc] dark:bg-[#000000cc] backdrop-filter backdrop-blur-lg flex justify-between md:hidden shadow-md shadow-gray-300 dark:shadow-gray-800 fixed z-10",
   left: "flex items-center gap-4",

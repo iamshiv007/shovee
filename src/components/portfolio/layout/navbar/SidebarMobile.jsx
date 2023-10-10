@@ -60,7 +60,7 @@ const MobileNavbar = ({ showMenu, setShowMenu }) => {
 
 export default MobileNavbar;
 
-const style = {
+export const style = {
   mainContainer:
     "w-full h-screen bg-[rgba(255,255,255,0.3)] dark:bg-[rgba(0,0,0,0.3)] fixed top-0 left-0 z-10",
   container:

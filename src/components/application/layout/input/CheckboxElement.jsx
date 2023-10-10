@@ -6,7 +6,7 @@ const CheckboxElement = ({ checked, name, handleInputChange, value }) => {
       {/* Checkbox Input */}
       <input
         checked={checked}
-        className='w-4 h-4 hover:cursor-pointer'
+        className={styles.input}
         name={name}
         onChange={handleInputChange}
         type={"checkbox"}
@@ -17,3 +17,7 @@ const CheckboxElement = ({ checked, name, handleInputChange, value }) => {
 };
 
 export default CheckboxElement;
+
+const styles = {
+  input: "w-4 h-4 hover:cursor-pointer",
+};
