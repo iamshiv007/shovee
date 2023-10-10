@@ -11,28 +11,28 @@ const Alert = () => {
 
   return (
     <Fragment>
-      <div className='overflow-x-hidden'>
+      <div className={styles.container}>
         <div
-          className={`font-semibold w-fit px-5 py-3 m-auto rounded flex items-center gap-6 fixed top-3 left-3 z-20 transition-all duration-500 
+          className={`${styles.alertBox} 
         ${alert ? "translate-x-0" : "translate-x-[-200px]"}
           ${alert?.type === "error" && "bg-red-600"} 
           ${alert?.type === "warning" && "bg-yellow-600"}
           ${alert?.type === "success" && "bg-green-600"}`}
         >
-          <div className='flex items-center gap-2'>
+          <div className={styles.flexContainer}>
             {/* Alert Icon */}
-            <p className='text-white text-2xl'>
+            <p className={styles.alertIcon}>
               {alert?.type === "error" && <BiErrorCircle />}
               {alert?.type === "warning" && <AiOutlineWarning />}
               {alert?.type === "success" && <IoIosCheckmarkCircleOutline />}
             </p>
 
             {/* Alert Message */}
-            <p className='text-white'>{alert?.message}</p>
+            <p className={styles.alertMessage}>{alert?.message}</p>
           </div>
 
           {/* Hide Alert */}
-          <button className='hover:scale-110' onClick={hideAlert}>
+          <button className={styles.closeButton} onClick={hideAlert}>
             <AiOutlineClose size={22} />
           </button>
         </div>
@@ -42,3 +42,14 @@ const Alert = () => {
 };
 
 export default Alert;
+
+// Define a styles object to store your class names
+const styles = {
+  container: "overflow-x-hidden",
+  alertBox:
+    "font-semibold w-fit px-5 py-3 m-auto rounded flex items-center gap-6 fixed top-3 left-3 z-20 transition-all duration-500",
+  flexContainer: "flex items-center gap-2",
+  alertIcon: "text-white text-2xl",
+  alertMessage: "text-white",
+  closeButton: "hover:scale-110",
+};
