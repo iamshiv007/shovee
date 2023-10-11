@@ -26,7 +26,7 @@ export const PortfolioLink = ({ home }) => {
         <p className={styles.icon}>
           <AiOutlineLink />
         </p>
-        <Link className={styles.porfolioLink} href={`/its/${home?.userName}`}>
+        <Link className={styles.portfolioLink} href={`/its/${home?.userName}`}>
           {process.env.NEXT_PUBLIC_APPLICATION_URL}/its/
           {home?.userName}
         </Link>

@@ -1,6 +1,7 @@
 import { Fragment, useEffect } from "react"
 import Head from "next/head"
 import Link from "next/link"
+import Image from "next/image"
 import { Inter } from "next/font/google"
 import { useDispatch, useSelector } from "react-redux"
 
@@ -73,19 +74,23 @@ export default function Home() {
         {/* ChatBox */}
         <ChatBox />
 
-        <div className="min-h-[50vh] pt-[100px] flex flex-col justify-center items-center gap-5 ">
-          <h1 className="text-xl md:text-3xl text-[#159e6e] text-center font-semibold p-2">Welcome to the best Personal Portfolio Generator.</h1>
-          <h2 className="text-sm md:text-lg text-[#17c1ff] text-center">Simple and attractive UI design.</h2>
-          <h2 className="text-sm md:text-lg text-[#17c1ff] text-center">Both light and dark themes.</h2>
-          <h2 className="text-sm md:text-lg text-[#17c1ff] text-center">Animation effects on scroll.</h2>
-          <h2 className="text-sm md:text-lg text-[#17c1ff] text-center">Easy-to-update.</h2>
+        <div className="p-4 min-h-[50vh] pt-[100px] flex flex-col gap-3 ">
+          <div>
+            <h1 className="text-xl md:text-3xl font-semibold">The Best Personal Portfolio Generator</h1>
+          </div>
+          <div>
+            <p className="text-base md:text-lg">Both light and dark themes.</p>
+            <p className="text-base md:text-lg">Simple and attractive UI design.</p>
+            <p className="text-base md:text-lg">Animation effects on scroll.</p>
+            <p className="text-base md:text-lg">Easy-to-update.</p>
+          </div>
         </div>
 
-        {loading || userLoading ? <CustomLoader /> : <div className='min-h-[40vh] flex flex-col justify-center items-center gap-5'>
+        {loading || userLoading ? <CustomLoader /> : <div className='p-4 min-h-[40vh] flex flex-col justify-center items-center md:items-end gap-5'>
           {user?.email && home?.userName ?
             <>
-              <p className='p-2 text-xl md:text-3xl text-center font-semibold'>
-                Update Your Personal Portfolio.
+              <p className='p-2 text-xl md:text-3xl font-semibold'>
+                Update Your Personal Portfolio
               </p>
               <div className="flex gap-3">
                 {/* Demo Button */}
